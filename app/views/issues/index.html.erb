@@ -6,6 +6,8 @@
 </div>
 
 <h2><%= @query.new_record? ? l(:label_issue_plural) : h(@query.name) %></h2>
+<p>Total de horas empleadas: <%= @total_spent_hours %></p>
+
 <% html_title(@query.new_record? ? l(:label_issue_plural) : @query.name) %>
 
 <%= form_tag({ :controller => 'issues', :action => 'index', :project_id => @project },

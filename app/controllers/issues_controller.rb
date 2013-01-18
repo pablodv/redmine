@@ -77,6 +77,8 @@ class IssuesController < ApplicationController
                               :offset => @offset,
                               :limit => @limit)
       @issue_count_by_group = @query.issue_count_by_group
+      @total_spent_hours = 0
+      @issues.each{ |i| @total_spent_hours += i.total_spent_hours }
 
       respond_to do |format|
         format.html { render :template => 'issues/index', :layout => !request.xhr? }
