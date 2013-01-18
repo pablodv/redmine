@@ -43,7 +43,7 @@ class QueriesController < ApplicationController
   end
 
   def new
-    @query = Query.new
+    @query = Query.new(is_report: params[:is_report].present? ? params[:is_report] : false)
     @query.user = User.current
     @query.project = @project
     @query.is_public = false unless User.current.allowed_to?(:manage_public_queries, @project) || User.current.admin?
@@ -60,7 +60,11 @@ class QueriesController < ApplicationController
 
     if @query.save
       flash[:notice] = l(:notice_successful_create)
-      redirect_to :controller => 'issues', :action => 'index', :project_id => @project, :query_id => @query
+      if @query.is_report
+        redirect_to :controller => 'timelog', :action => 'report', :project_id => @project, :query_id => @query
+      else
+        redirect_to :controller => 'issues', :action => 'index', :project_id => @project, :query_id => @query
+      end
     else
       render :action => 'new', :layout => !request.xhr?
     end

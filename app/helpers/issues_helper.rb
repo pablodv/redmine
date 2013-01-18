@@ -173,7 +173,7 @@ module IssuesHelper
 
   def sidebar_queries
     unless @sidebar_queries
-      @sidebar_queries = Query.visible.all(
+      @sidebar_queries = Query.visible.is_not_report.all(
         :order => "#{Query.table_name}.name ASC",
         # Project specific queries and global queries
         :conditions => (@project.nil? ? ["project_id IS NULL"] : ["project_id IS NULL OR project_id = ?", @project.id])

@@ -160,6 +160,9 @@ class Query < ActiveRecord::Base
     }
   }
 
+  scope :is_not_report, where(:is_report => false)
+  scope :is_a_report, where(:is_report => true)
+
   def initialize(attributes=nil, *args)
     super attributes
     self.filters ||= { 'status_id' => {:operator => "o", :values => [""]} }

@@ -23,6 +23,9 @@
 <p class="buttons">
   <%= link_to_function l(:button_apply), '$("#query_form").submit()', :class => 'icon icon-checked' %>
   <%= link_to l(:button_clear), {:controller => controller_name, :action => action_name, :project_id => @project, :issue_id => @issue}, :class => 'icon icon-reload' %>
+  <% if @query.new_record? && @project.present? %>
+    <%= link_to l(:button_save), new_project_query_path(@project, is_report: true), class: 'icon icon-save' %>
+  <% end %>
 </p>
 
 <div class="tabs">
