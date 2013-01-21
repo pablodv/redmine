@@ -4,6 +4,7 @@ module Redmine
       class << self
 
         def all
+
           @scms || []
         end
 

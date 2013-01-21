@@ -442,6 +442,7 @@ class RepositoriesGitControllerTest < ActionController::TestCase
       assert_select 'th.filename', :text => 'test.txt'
     end
 
+
     def test_save_diff_type
       user1 = User.find(1)
       user1.pref[:diff_type] = nil
@@ -556,6 +557,7 @@ class RepositoriesGitControllerTest < ActionController::TestCase
                    :action => '/projects/subproject1/repository/revision'
                  }
     end
+
 
     def test_revision
       assert_equal 0, @repository.changesets.count

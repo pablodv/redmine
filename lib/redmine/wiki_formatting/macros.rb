@@ -225,6 +225,7 @@ module Redmine
         out
       end
 
+
       desc "Displays a clickable thumbnail of an attached image. Examples:\n\n<pre>{{thumbnail(image.png)}}\n{{thumbnail(image.png, size=300, title=Thumbnail)}}</pre>"
       macro :thumbnail do |obj, args|
         args, options = extract_macro_options(args, :size, :title)

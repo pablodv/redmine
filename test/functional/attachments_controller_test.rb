@@ -123,6 +123,7 @@ class AttachmentsControllerTest < ActionController::TestCase
     assert_select 'th.filename', :text => 'test1.txt'
   end
 
+
   def test_show_text_file
     get :show, :id => 4
     assert_response :success
@@ -238,6 +239,7 @@ class AttachmentsControllerTest < ActionController::TestCase
 
     @request.session[:user_id] = 3
     get :show, :id => attachment.id
+
     assert_response 403
   end
 

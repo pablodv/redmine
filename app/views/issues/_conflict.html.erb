@@ -18,6 +18,7 @@
 </div>
 <p>
   <label><%= radio_button_tag 'conflict_resolution', 'overwrite' %> <%= l(:text_issue_conflict_resolution_overwrite) %></label><br />
+
   <% if @issue.notes.present? %>
   <label><%= radio_button_tag 'conflict_resolution', 'add_notes' %> <%= l(:text_issue_conflict_resolution_add_notes) %></label><br />
   <% end %>

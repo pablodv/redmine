@@ -67,6 +67,7 @@ module Redmine
           !!(user && self.watcher_user_ids.detect {|uid| uid == user.id })
         end
 
+
         def notified_watchers
           notified = watcher_users.active
           notified.reject! {|user| user.mail.blank? || user.mail_notification == 'none'}

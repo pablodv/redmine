@@ -538,6 +538,7 @@ class TimelogControllerTest < ActionController::TestCase
     assert_select 'td.issue_cf_2', :text => 'filter_on_issue_custom_field'
   end
 
+
   def test_index_atom_feed
     get :index, :project_id => 1, :format => 'atom'
     assert_response :success

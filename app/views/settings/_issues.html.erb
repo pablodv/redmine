@@ -3,7 +3,9 @@
 <div class="box tabular settings">
 <p><%= setting_check_box :cross_project_issue_relations %></p>
 
+
 <p><%= setting_select :cross_project_subtasks, cross_project_subtasks_options %></p>
+
 
 <p><%= setting_check_box :issue_group_assignment %></p>
 
@@ -14,6 +16,7 @@
 <p><%= setting_select :issue_done_ratio, Issue::DONE_RATIO_OPTIONS.collect {|i| [l("setting_issue_done_ratio_#{i}"), i]} %></p>
 
 <p><%= setting_multiselect :non_working_week_days, (1..7).map {|d| [day_name(d), d.to_s]}, :inline => true %></p>
+
 
 <p><%= setting_text_field :issues_export_limit, :size => 6 %></p>
 

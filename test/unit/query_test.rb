@@ -1176,7 +1176,7 @@ class QueryTest < ActiveSupport::TestCase
         User.add_to_project(@manager, @project, @manager_role)
         User.add_to_project(@developer, @project, @developer_role)
         User.add_to_project(@boss, @project, [@manager_role, @developer_role])
-        
+
         @issue1 = Issue.generate!(:project => @project, :assigned_to_id => @manager.id)
         @issue2 = Issue.generate!(:project => @project, :assigned_to_id => @developer.id)
         @issue3 = Issue.generate!(:project => @project, :assigned_to_id => @boss.id)

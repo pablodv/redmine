@@ -138,6 +138,7 @@ class RepositoriesController < ApplicationController
 
   def revisions
     @changeset_count = @repository.changesets.count
+
     @changeset_pages = Paginator.new @changeset_count,
                                      per_page_option,
                                      params['page']

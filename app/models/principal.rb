@@ -24,6 +24,7 @@ class Principal < ActiveRecord::Base
   STATUS_REGISTERED = 2
   STATUS_LOCKED     = 3
 
+
   has_many :members, :foreign_key => 'user_id', :dependent => :destroy
   has_many :memberships, :class_name => 'Member', :foreign_key => 'user_id', :include => [ :project, :roles ], :conditions => "#{Project.table_name}.status<>#{Project::STATUS_ARCHIVED}", :order => "#{Project.table_name}.name"
   has_many :projects, :through => :memberships

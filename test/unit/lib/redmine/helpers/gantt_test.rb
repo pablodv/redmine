@@ -36,6 +36,7 @@ class Redmine::Helpers::GanttHelperTest < ActionView::TestCase
   include ERB::Util
   include Rails.application.routes.url_helpers
 
+
   def setup
     setup_with_controller
     User.current = User.find(1)

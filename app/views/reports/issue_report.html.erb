@@ -1,6 +1,7 @@
 <h2><%=l(:label_report_plural)%></h2>
 
 <div class="splitcontentleft">
+
 <h3><%=l(:field_tracker)%>&nbsp;&nbsp;<%= link_to image_tag('zoom_in.png'), project_issues_report_details_path(@project, :detail => 'tracker') %></h3>
 <%= render :partial => 'simple', :locals => { :data => @issues_by_tracker, :field_name => "tracker_id", :rows => @trackers } %>
 <br />
@@ -17,6 +18,7 @@
 </div>
 
 <div class="splitcontentright">
+
 <h3><%=l(:field_version)%>&nbsp;&nbsp;<%= link_to image_tag('zoom_in.png'), project_issues_report_details_path(@project, :detail => 'version') %></h3>
 <%= render :partial => 'simple', :locals => { :data => @issues_by_version, :field_name => "fixed_version_id", :rows => @versions } %>
 <br />

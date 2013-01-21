@@ -202,7 +202,6 @@ eu:
   mail_subject_wiki_content_updated: "'%{id}' wiki orria eguneratu da"
   mail_body_wiki_content_updated: "%{author}-(e)k '%{id}' wiki orria eguneratu du."
 
-
   field_name: Izena
   field_description: Deskribapena
   field_summary: Laburpena
@@ -1080,3 +1079,4 @@ eu:
   text_turning_multiple_off: If you disable multiple values, duplicate values will be
     removed in order to preserve only one value per item.
   label_attribute_of_issue: Issue's %{name}
+

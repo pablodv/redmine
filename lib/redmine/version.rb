@@ -3,6 +3,7 @@ require 'rexml/document'
 module Redmine
   module VERSION #:nodoc:
     MAJOR = 2
+
     MINOR = 2
     TINY  = 1
 
@@ -10,6 +11,7 @@ module Redmine
     # * official release: nil
     # * stable branch:    stable
     # * trunk:            devel
+
     BRANCH = 'devel'
 
     # Retrieves the revision from the working copy
@@ -24,6 +26,7 @@ module Redmine
           # Could not find the current revision
         end
       end
+
       nil
     end
 

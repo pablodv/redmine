@@ -68,11 +68,13 @@ class EnumerationsController < ApplicationController
     if !@enumeration.in_use?
       # No associated objects
       @enumeration.destroy
+
       redirect_to enumerations_path
       return
     elsif params[:reassign_to_id]
       if reassign_to = @enumeration.class.find_by_id(params[:reassign_to_id])
         @enumeration.destroy(reassign_to)
+
         redirect_to enumerations_path
         return
       end

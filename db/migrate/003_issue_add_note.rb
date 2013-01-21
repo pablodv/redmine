@@ -7,6 +7,7 @@ class IssueAddNote < ActiveRecord::Migration
   end
 
   def self.down
+
     Permission.where("controller=? and action=?", 'issues', 'add_note').first.destroy
   end
 end

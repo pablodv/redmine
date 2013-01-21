@@ -505,6 +505,7 @@ class RedCloth3 < String
         atts
     end
 
+
     STYLES_RE = /^(color|width|height|border|background|padding|margin|font|text|float)(-[a-z]+)*:\s*((\d+%?|\d+px|\d+(\.\d+)?em|#[0-9a-f]+|[a-z]+)\s*)+$/i
 
     def sanitize_styles(str)
@@ -816,6 +817,7 @@ class RedCloth3 < String
             ":
             (                          # $url
             (\/|[a-zA-Z]+:\/\/|www\.|mailto:)  # $proto
+
             [[:alnum:]_\/]\S+?
             )               
             (\/)?                      # $slash

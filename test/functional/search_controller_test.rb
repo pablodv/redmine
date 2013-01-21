@@ -101,6 +101,7 @@ class SearchControllerTest < ActionController::TestCase
     assert_not_include Issue.find(2), assigns(:results)
   end
 
+
   def test_search_all_projects_with_scope_param
     get :index, :q => 'issue', :scope => 'all'
     assert_response :success

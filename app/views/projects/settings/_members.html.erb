@@ -1,5 +1,6 @@
 <%= error_messages_for 'member' %>
 <% roles = Role.find_all_givable
+
    members = @project.member_principals.includes(:roles, :principal).all.sort %>
 
 <div class="splitcontentleft">
@@ -51,12 +52,14 @@
 <% end %>
 </div>
 
+
 <div class="splitcontentright">
 <% if roles.any? %>
   <%= form_for(@member, {:as => :membership, :url => project_memberships_path(@project), :remote => true, :method => :post}) do |f| %>
     <fieldset><legend><%=l(:label_member_new)%></legend>
 
     <p><%= label_tag "principal_search", l(:label_principal_search) %><%= text_field_tag 'principal_search', nil %></p>
+
     <%= javascript_tag "observeSearchfield('principal_search', null, '#{ escape_javascript autocomplete_project_memberships_path(@project, :format => 'js') }')" %>
 
     <div id="principals_for_new_member">

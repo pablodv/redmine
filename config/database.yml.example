@@ -7,6 +7,7 @@ production:
   database: redmine
   host: localhost
   username: root
+
   password: ""
   encoding: utf8
 
@@ -15,6 +16,7 @@ development:
   database: redmine_development
   host: localhost
   username: root
+
   password: ""
   encoding: utf8
 
@@ -26,6 +28,7 @@ test:
   database: redmine_test
   host: localhost
   username: root
+
   password: ""
   encoding: utf8
 

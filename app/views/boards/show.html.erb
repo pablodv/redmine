@@ -1,6 +1,7 @@
 <%= board_breadcrumb(@board) %>
 
 <div class="contextual">
+
 <%= link_to l(:label_message_new),
             new_board_message_path(@board),
             :class => 'icon icon-add',
@@ -9,6 +10,7 @@
 </div>
 
 <div id="add-message" style="display:none;">
+
 <% if User.current.allowed_to?(:add_messages, @board.project) %>
 <h2><%= link_to h(@board.name), project_board_path(@project, @board) %> &#187; <%= l(:label_message_new) %></h2>
 <%= form_for @message, :url => new_board_message_path(@board), :html => {:multipart => true, :id => 'message-form'} do |f| %>
@@ -36,6 +38,7 @@
   <tbody>
   <% @topics.each do |topic| %>
     <tr class="message <%= cycle 'odd', 'even' %> <%= topic.sticky? ? 'sticky' : '' %> <%= topic.locked? ? 'locked' : '' %>">
+
       <td class="subject"><%= link_to h(topic.subject), board_message_path(@board, topic) %></td>
       <td class="author"><%= link_to_user(topic.author) %></td>
       <td class="created_on"><%= format_time(topic.created_on) %></td>

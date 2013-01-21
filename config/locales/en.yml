@@ -330,6 +330,7 @@ en:
   field_board_parent: Parent forum
   field_private_notes: Private notes
 
+
   setting_app_title: Application title
   setting_app_subtitle: Application subtitle
   setting_welcome_text: Welcome text
@@ -355,6 +356,7 @@ en:
   setting_time_format: Time format
   setting_cross_project_issue_relations: Allow cross-project issue relations
   setting_cross_project_subtasks: Allow cross-project subtasks
+
   setting_issue_list_default_columns: Default columns displayed on the issue list
   setting_repositories_encodings: Attachments and repositories encodings
   setting_emails_header: Emails header
@@ -398,6 +400,7 @@ en:
   setting_thumbnails_size: Thumbnails size (in pixels)
   setting_non_working_week_days: Non-working days
 
+
   permission_add_project: Create project
   permission_add_subprojects: Create subprojects
   permission_edit_project: Edit project
@@ -418,6 +421,7 @@ en:
   permission_edit_own_issue_notes: Edit own notes
   permission_view_private_notes: View private notes
   permission_set_notes_private: Set notes as private
+
   permission_move_issues: Move issues
   permission_delete_issues: Delete issues
   permission_manage_public_queries: Manage public queries
@@ -617,6 +621,7 @@ en:
   label_new_statuses_allowed: New statuses allowed
   label_all: all
   label_any: any
+
   label_none: none
   label_nobody: nobody
   label_next: Next
@@ -653,6 +658,7 @@ en:
   label_in_more_than: in more than
   label_in_the_next_days: in the next
   label_in_the_past_days: in the past
+
   label_greater_or_equal: '>='
   label_less_or_equal: '<='
   label_between: between
@@ -663,6 +669,7 @@ en:
   label_this_week: this week
   label_last_week: last week
   label_last_n_weeks: "last %{count} weeks"
+
   label_last_n_days: "last %{count} days"
   label_this_month: this month
   label_last_month: last month
@@ -676,6 +683,7 @@ en:
   label_any_issues_in_project: any issues in project
   label_any_issues_not_in_project: any issues not in project
   label_no_issues_in_project: no issues in project
+
   label_day_plural: days
   label_repository: Repository
   label_repository_new: New repository
@@ -932,6 +940,7 @@ en:
   button_duplicate: Duplicate
   button_show: Show
   button_hide: Hide
+
   button_edit_section: Edit this section
   button_export: Export
   button_delete_my_account: Delete my account
@@ -1028,6 +1037,7 @@ en:
   text_session_expiration_settings: "Warning: changing these settings may expire the current sessions including yours."
   text_project_closed: This project is closed and read-only.
   text_turning_multiple_off: "If you disable multiple values, duplicate values will be removed in order to preserve only one value per item."
+
 
   default_role_manager: Manager
   default_role_developer: Developer

@@ -114,6 +114,7 @@ class JournalTest < ActiveSupport::TestCase
     end
   end
 
+
   def test_visible_scope_for_anonymous
     # Anonymous user should see issues of public projects only
     journals = Journal.visible(User.anonymous).all
@@ -175,4 +176,5 @@ class JournalTest < ActiveSupport::TestCase
     assert_equal '0', j.old_value
     assert_equal '0', j.value
   end
+
 end

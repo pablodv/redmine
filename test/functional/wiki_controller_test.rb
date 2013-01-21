@@ -540,6 +540,7 @@ class WikiControllerTest < ActionController::TestCase
       assert_select 'a[href=?]', '/projects/ecookbook/wiki/Another_page/1/annotate', :text => 'Annotate'
       assert_select 'a[href=?]', '/projects/ecookbook/wiki/Another_page/1', :text => 'Delete', :count => 0
     end
+
   end
 
   def test_diff
@@ -567,6 +568,7 @@ class WikiControllerTest < ActionController::TestCase
     get :diff, :project_id => 1, :id => 'CookBook_documentation', :version => '99', :version_from => '98'
     assert_response 404
   end
+
 
   def test_annotate
     get :annotate, :project_id => 1, :id =>  'CookBook_documentation', :version => 2
@@ -596,6 +598,7 @@ class WikiControllerTest < ActionController::TestCase
     get :annotate, :project_id => 1, :id => 'CookBook_documentation', :version => '99'
     assert_response 404
   end
+
 
   def test_get_rename
     @request.session[:user_id] = 2
@@ -728,6 +731,7 @@ class WikiControllerTest < ActionController::TestCase
       end
     end
   end
+
 
   def test_index
     get :index, :project_id => 'ecookbook'

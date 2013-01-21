@@ -36,6 +36,7 @@ class EnumerationsControllerTest < ActionController::TestCase
     assert_response 302
   end
 
+
   def test_new
     get :new, :type => 'IssuePriority'
     assert_response :success

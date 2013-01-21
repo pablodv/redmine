@@ -447,6 +447,7 @@ class MailHandlerTest < ActiveSupport::TestCase
     assert_equal 'd8e8fca2dc0f896fd7cb4cb0031ba249', attachment.digest
   end
 
+
   def test_add_issue_with_iso_8859_1_subject
     issue = submit_email(
               'subject_as_iso-8859-1.eml',
@@ -543,6 +544,7 @@ class MailHandlerTest < ActiveSupport::TestCase
     assert_equal Issue.find(2), journal.journalized
     assert_match /This is reply/, journal.notes
     assert_equal false, journal.private_notes
+
     assert_equal 'Feature request', journal.issue.tracker.name
   end
 
@@ -617,6 +619,7 @@ class MailHandlerTest < ActiveSupport::TestCase
       assert_equal true, journal.private_notes
     end
   end
+
 
   def test_reply_to_a_message
     m = submit_email('message_reply.eml')

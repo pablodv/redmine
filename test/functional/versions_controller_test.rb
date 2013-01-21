@@ -109,6 +109,7 @@ class VersionsControllerTest < ActionController::TestCase
     end
   end
 
+
   def test_new
     @request.session[:user_id] = 2
     get :new, :project_id => '1'

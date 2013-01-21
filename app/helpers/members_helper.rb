@@ -32,4 +32,5 @@ module MembersHelper
 
     s + content_tag('p', links, :class => 'pagination')
   end
+
 end

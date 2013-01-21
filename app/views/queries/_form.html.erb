@@ -5,11 +5,18 @@
 <p><label for="query_name"><%=l(:field_name)%></label>
 <%= text_field 'query', 'name', :size => 80 %></p>
 
-<% if User.current.admin? || User.current.allowed_to?(:manage_public_queries, @project) %>
-<p><label for="query_is_public"><%=l(:field_is_public)%></label>
-<%= check_box 'query', 'is_public',
+<% if @query.is_report %>
+  <%= hidden_field_tag 'query[report_columns]', session[:report_columns] %>
+  <%= hidden_field_tag 'query[report_criteria]', session[:report_criteria] %>
+  <%= hidden_field_tag 'query[is_report]', true %>
+<% else %>
+  <% if User.current.admin? || User.current.allowed_to?(:manage_public_queries, @project) %>
+  <p><label for="query_is_public"><%=l(:field_is_public)%></label>
+  <%= check_box 'query', 'is_public',
       :onchange => (User.current.admin? ? nil : 'if (this.checked) {$("#query_is_for_all").removeAttr("checked"); $("#query_is_for_all").attr("disabled", true);} else {$("#query_is_for_all").removeAttr("disabled");}') %></p>
+  <% end %>
 <% end %>
+
 
 <p><label for="query_is_for_all"><%=l(:field_is_for_all)%></label>
 <%= check_box_tag 'query_is_for_all', 1, @query.project.nil?,

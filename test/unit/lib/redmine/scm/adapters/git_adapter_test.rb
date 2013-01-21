@@ -477,6 +477,7 @@ begin
         assert_equal 'file', f1.kind
       end
 
+
       def test_entries_latin_1_files
         entries1 = @adapter.entries('latin-1-dir', '64f1f3e8')
         assert entries1
@@ -534,6 +535,7 @@ begin
           assert_equal "file", entry.kind
         end
       end
+
 
       def test_path_encoding_default_utf8
         adpt1 = Redmine::Scm::Adapters::GitAdapter.new(

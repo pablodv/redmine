@@ -78,11 +78,13 @@ class Redmine::WikiFormatting::MacrosTest < ActionView::TestCase
     assert_equal "<p>Baz: (arg1,arg2) (String) (line1\nline2)</p>", textilizable("{{baz(arg1, arg2)\nline1\nline2\n}}")
   end
 
+
   def test_macro_name_with_upper_case
     Redmine::WikiFormatting::Macros.macro(:UpperCase) {|obj, args| "Upper"}
 
     assert_equal "<p>Upper</p>", textilizable("{{UpperCase}}")
   end
+
 
   def test_multiple_macros_on_the_same_line
     Redmine::WikiFormatting::Macros.macro :foo do |obj, args|
@@ -125,6 +127,7 @@ class Redmine::WikiFormatting::MacrosTest < ActionView::TestCase
     options = extract_macro_options(["params=x=1&y=2"], :params)
     assert_equal([[], {:params => "x=1&y=2"}], options)
   end
+
 
   def test_macro_exception_should_be_displayed
     Redmine::WikiFormatting::Macros.macro :exception do |obj, args|
@@ -280,6 +283,7 @@ class Redmine::WikiFormatting::MacrosTest < ActionView::TestCase
     @project = Project.find(1)
     assert_equal expected, textilizable("{{child_pages(depth=1)}}", :object => WikiPage.find(2).content)
   end
+
 
   def test_macro_child_pages_without_wiki_page_should_fail
     assert_match /can be called from wiki pages only/, textilizable("{{child_pages}}")

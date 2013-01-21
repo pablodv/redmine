@@ -26,6 +26,7 @@ roles_001:
     - :set_issues_private
     - :set_notes_private
     - :view_private_notes
+
     - :delete_issue_watchers
     - :manage_public_queries
     - :save_queries

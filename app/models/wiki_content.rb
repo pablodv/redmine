@@ -60,6 +60,7 @@ class WikiContent < ActiveRecord::Base
                   :datetime => :updated_on,
                   :type => 'wiki-page',
                   :group => :page,
+
                   :url => Proc.new {|o| {:controller => 'wiki', :action => 'show', :project_id => o.page.wiki.project, :id => o.page.title, :version => o.version}}
 
     acts_as_activity_provider :type => 'wiki_edits',
@@ -75,6 +76,7 @@ class WikiContent < ActiveRecord::Base
                                                           "LEFT JOIN #{Project.table_name} ON #{Project.table_name}.id = #{Wiki.table_name}.project_id"}
 
     after_destroy :page_update_after_destroy
+
 
     def text=(plain)
       case Setting.wiki_compression

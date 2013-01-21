@@ -26,6 +26,7 @@ if RUBY_VERSION < '1.9'
   require 'iconv'
 end
 
+
 module Redmine
   module Export
     module PDF
@@ -120,6 +121,7 @@ module Redmine
             Iconv.conv('UTF-16BE', 'UTF-8', str)
           end
         end
+
 
         def RDMCell(w ,h=0, txt='', border=0, ln=0, align='', fill=0, link='')
           Cell(w, h, fix_text_encoding(txt), border, ln, align, fill, link)
@@ -430,6 +432,7 @@ module Redmine
           table_width = col_width.inject(0) {|s,v| s += v}
         end
 
+
         # title
         pdf.SetFontStyle('B',11)
         pdf.RDMCell(190,10, title)
@@ -479,6 +482,7 @@ module Redmine
             pdf.RDMwriteHTMLCell(0, 5, 10, 0, issue.description.to_s, issue.attachments, "LRBT")
             pdf.SetAutoPageBreak(false)
           end
+
         end
 
         if issues.size == Setting.issues_export_limit.to_i

@@ -15,6 +15,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
+
 require File.expand_path('../../../../../../test_helper', __FILE__)
 begin
   require 'mocha'
@@ -58,6 +59,7 @@ begin
         buf =  diff1[14].gsub(/\r\n|\r|\n/, "")
         assert_equal "-Display more information.", buf
       end
+
 
       def test_diff_path_invalid
         assert_equal [], @adapter.diff('invalid', 1)
@@ -167,6 +169,7 @@ begin
         assert_equal 'docls.txt-20071203175005-a3hyc3mn0shl7cgu-1', revisions[0].paths[1][:revision]
       end
 
+
       def test_revisions_path_invalid
         assert_nil @adapter.revisions('invalid')
       end
@@ -206,6 +209,7 @@ begin
           assert_equal "file", entry.kind
         end
       end
+
 
       private
 

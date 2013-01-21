@@ -37,6 +37,7 @@ class ProjectEnumerationsController < ApplicationController
       time_entry_activity.destroy(time_entry_activity.parent)
     end
     flash[:notice] = l(:notice_successful_update)
+
     redirect_to settings_project_path(@project, :tab => 'activities')
   end
 end

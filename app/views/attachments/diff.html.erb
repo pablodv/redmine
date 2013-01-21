@@ -6,6 +6,7 @@
 <p><%= link_to_attachment @attachment, :text => l(:button_download), :download => true -%>
    <span class="size">(<%= number_to_human_size @attachment.filesize %>)</span></p>
 </div>
+
 <%= form_tag({}, :method => 'get') do %>
   <p>
     <%= l(:label_view_diff) %>:

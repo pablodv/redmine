@@ -26,6 +26,7 @@ namespace :redmine do
     task :move_to_subdirectories => :environment do
       Attachment.move_from_root_to_target_directory
     end
+
   end
 
   namespace :tokens do

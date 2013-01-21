@@ -189,6 +189,7 @@ class WikiPage < ActiveRecord::Base
     ret
   end
 
+
   protected
 
   def validate_parent_title

@@ -418,6 +418,7 @@ class UserTest < ActiveSupport::TestCase
     with_settings :user_format => :username do
       assert_equal 'jsmith', @jsmith.reload.name
     end
+
     with_settings :user_format => :lastname do
       assert_equal 'Smith', @jsmith.reload.name
     end

@@ -5,6 +5,7 @@
 <table>
 <tr>
     <td align="right"><label for="username"><%=l(:field_login)%>:</label></td>
+
     <td align="left"><%= text_field_tag 'username', params[:username], :tabindex => '1' %></td>
 </tr>
 <tr>
@@ -36,6 +37,7 @@
     </td>
 </tr>
 </table>
+
 <% end %>
 </div>
 <%= call_hook :view_account_login_bottom %>

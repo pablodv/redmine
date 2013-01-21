@@ -212,6 +212,7 @@ module Redmine #:nodoc:
     end
     private :compare_versions
 
+
     # Sets a requirement on a Redmine plugin version
     # Raises a PluginRequirementError exception if the requirement is not met
     #

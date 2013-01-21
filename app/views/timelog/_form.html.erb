@@ -2,6 +2,7 @@
 <%= back_url_hidden_field_tag %>
 
 <div class="box tabular">
+
   <% if @time_entry.new_record? %>
     <% if params[:project_id] || @time_entry.issue %>
       <%= f.hidden_field :project_id %>

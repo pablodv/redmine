@@ -293,6 +293,7 @@ RedmineApp::Application.routes.draw do
   resources :enumerations, :except => :show
   match 'enumerations/:type', :to => 'enumerations#index', :via => :get
 
+
   get 'projects/:id/search', :controller => 'search', :action => 'index'
   get 'search', :controller => 'search', :action => 'index'
 

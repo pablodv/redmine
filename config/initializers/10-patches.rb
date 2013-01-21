@@ -143,6 +143,7 @@ module ActionMailer
   end
 end
 
+
 module ActionController
   module MimeResponds
     class Collector

@@ -69,6 +69,7 @@ class VersionTest < ActiveSupport::TestCase
     add_issue(v, :status => status, :done_ratio => 20)
     add_issue(v, :status => status, :done_ratio => 70, :estimated_hours => 25)
     add_issue(v, :status => status, :estimated_hours => 15)
+
     assert_progress_equal 100.0, v.completed_percent
     assert_progress_equal 100.0, v.closed_percent
   end
@@ -88,6 +89,7 @@ class VersionTest < ActiveSupport::TestCase
     v = Version.create!(:project => project, :name => 'Progress')
     add_issue(v)
     add_issue(v, :done_ratio => 20)
+
     add_issue(v, :status => IssueStatus.where(:is_closed => true).first)
     assert_progress_equal (0.0 + 20.0 + 100.0)/3, v.completed_percent
     assert_progress_equal (100.0)/3, v.closed_percent

@@ -4,6 +4,7 @@
 
 <h2><%=l(:label_user_plural)%></h2>
 
+
 <%= form_tag(users_path, :method => :get) do %>
 <fieldset><legend><%= l(:label_filter_plural) %></legend>
 <label for='status'><%= l(:field_status) %>:</label>
@@ -36,6 +37,7 @@
   </tr></thead>
   <tbody>
 <% for user in @users -%>
+
   <tr class="<%= user.css_classes %> <%= cycle("odd", "even") %>">
   <td class="username"><%= avatar(user, :size => "14") %><%= link_to h(user.login), edit_user_path(user) %></td>
   <td class="firstname"><%= h(user.firstname) %></td>

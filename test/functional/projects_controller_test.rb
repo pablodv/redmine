@@ -522,6 +522,7 @@ class ProjectsControllerTest < ActionController::TestCase
     assert_response 404
   end
 
+
   def test_post_copy_should_copy_requested_items
     @request.session[:user_id] = 1 # admin
     CustomField.delete_all

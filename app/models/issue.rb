@@ -19,6 +19,7 @@ class Issue < ActiveRecord::Base
   include Redmine::SafeAttributes
   include Redmine::Utils::DateCalculation
 
+
   belongs_to :project
   belongs_to :tracker
   belongs_to :status, :class_name => 'IssueStatus', :foreign_key => 'status_id'
@@ -36,6 +37,7 @@ class Issue < ActiveRecord::Base
       ["(#{Journal.table_name}.private_notes = ? OR (#{Project.allowed_to_condition(User.current, :view_private_notes)}))", false]
     },
     :readonly => true
+
 
   has_many :time_entries, :dependent => :delete_all
   has_and_belongs_to_many :changesets, :order => "#{Changeset.table_name}.committed_on ASC, #{Changeset.table_name}.id ASC"
@@ -62,6 +64,7 @@ class Issue < ActiveRecord::Base
 
   attr_reader :current_journal
   delegate :notes, :notes=, :private_notes, :private_notes=, :to => :current_journal, :allow_nil => true
+
 
   validates_presence_of :subject, :priority, :project, :tracker, :author, :status
 
@@ -144,6 +147,7 @@ class Issue < ActiveRecord::Base
   def editable?(user=User.current)
     user.allowed_to?(:edit_issues, project) || user.allowed_to?(:add_issue_notes, project)
   end
+
 
   def initialize(attributes=nil, *args)
     super
@@ -359,6 +363,7 @@ class Issue < ActiveRecord::Base
     'custom_fields',
     'lock_version',
     'notes',
+
     :if => lambda {|issue, user| issue.new_record? || user.allowed_to?(:edit_issues, issue.project) }
 
   safe_attributes 'status_id',
@@ -831,6 +836,7 @@ class Issue < ActiveRecord::Base
     end
   end
 
+
   # Finds an issue relation given its id.
   def find_relation(relation_id)
     IssueRelation.find(relation_id, :conditions => ["issue_to_id = ? OR issue_from_id = ?", id, id])
@@ -1027,6 +1033,7 @@ class Issue < ActiveRecord::Base
       false
     end
   end
+
 
   # Extracted from the ReportsController.
   def self.by_tracker(project)

@@ -1,5 +1,6 @@
 <h2><%= @copy ? l(:button_copy) : l(:label_bulk_edit_selected_issues) %></h2>
 
+
 <ul id="bulk-selection">
 <% @issues.each do |issue| %>
   <%= content_tag 'li', link_to_issue(issue) %>

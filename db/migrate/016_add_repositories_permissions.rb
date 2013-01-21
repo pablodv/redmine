@@ -12,6 +12,7 @@ class AddRepositoriesPermissions < ActiveRecord::Migration
   end
 
   def self.down
+
     Permission.where("controller=? and action=?", 'repositories', 'show').first.destroy
     Permission.where("controller=? and action=?", 'repositories', 'browse').first.destroy
     Permission.where("controller=? and action=?", 'repositories', 'entry').first.destroy

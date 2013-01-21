@@ -21,6 +21,7 @@ if RUBY_VERSION < '1.9'
   require 'iconv'
 end
 
+
 module Redmine
   module Scm
     module Adapters

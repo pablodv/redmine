@@ -813,10 +813,6 @@ el:
   default_issue_status_new: Νέα
   default_issue_status_in_progress: In Progress
   default_issue_status_resolved: Επιλυμένο
-  default_issue_status_feedback: Σχόλια
-  default_issue_status_closed: Κλειστό
-  default_issue_status_rejected: Απορριπτέο
-  default_doc_category_user: Τεκμηρίωση χρήστη
   default_doc_category_tech: Τεχνική τεκμηρίωση
   default_priority_low: Χαμηλή
   default_priority_normal: Κανονική
@@ -959,7 +955,6 @@ el:
   field_commit_logs_encoding: Κωδικοποίηση μηνυμάτων commit
   field_scm_path_encoding: Path encoding
   text_scm_path_encoding_note: "Default: UTF-8"
-  field_path_to_repository: Path to repository
   field_root_directory: Root directory
   field_cvs_module: Module
   field_cvsroot: CVSROOT
@@ -1079,3 +1074,4 @@ el:
   text_turning_multiple_off: If you disable multiple values, duplicate values will be
     removed in order to preserve only one value per item.
   label_attribute_of_issue: Issue's %{name}
+

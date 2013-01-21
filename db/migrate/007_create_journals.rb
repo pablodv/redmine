@@ -28,6 +28,7 @@ class CreateJournals < ActiveRecord::Migration
     Permission.create :controller => "issues", :action => "history", :description => "label_history", :sort => 1006, :is_public => true, :mail_option => 0, :mail_enabled => 0
 
     # data migration
+
     IssueHistory.all.each {|h|
       j = Journal.new(:journalized => h.issue, :user_id => h.author_id, :notes => h.notes, :created_on => h.created_on)
       j.details << JournalDetail.new(:property => 'attr', :prop_key => 'status_id', :value => h.status_id)
@@ -50,6 +51,7 @@ class CreateJournals < ActiveRecord::Migration
     end
 
     add_index "issue_histories", ["issue_id"], :name => "issue_histories_issue_id"
+
 
     Permission.where("controller=? and action=?", 'issues', 'history').first.destroy
   end

@@ -434,5 +434,6 @@ class Repository < ActiveRecord::Base
   end
 
   def clear_extra_info_of_changesets
+
   end
 end

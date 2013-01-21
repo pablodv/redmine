@@ -69,6 +69,7 @@ module Redmine
       @style = style
       @file_name = nil
       @git_diff = false
+
     end
 
     # Function for add a line of this Diff
@@ -138,6 +139,7 @@ module Redmine
         @file_name = arg
       end
     end
+
 
     def diff_for_added_line
       if @type == 'sbs' && @removed > 0 && @added < @removed

@@ -1,5 +1,6 @@
 <div class="contextual">
 <% if @editable %>
+
 <% if @content.current_version? %>
   <%= link_to_if_authorized(l(:button_edit), {:action => 'edit', :id => @page.title}, :class => 'icon icon-edit', :accesskey => accesskey(:edit)) %>
   <%= watcher_tag(@page, User.current) %>
@@ -20,6 +21,7 @@
     <p>
     <%= link_to(("\xc2\xab " + l(:label_previous)),
                 :action => 'show', :id => @page.title, :project_id => @page.project,
+
                 :version => @content.previous.version) + " - " if @content.previous %>
     <%= "#{l(:label_version)} #{@content.version}/#{@page.content.version}" %>
     <%= '('.html_safe + link_to(l(:label_diff), :controller => 'wiki', :action => 'diff',

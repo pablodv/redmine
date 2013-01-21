@@ -76,7 +76,6 @@ class IssuesControllerTest < ActionController::TestCase
     assert_template 'index'
     assert_not_nil assigns(:issues)
     assert_nil assigns(:project)
-
     assert_select 'a[href=/issues/1]', 0
     assert_select 'a[href=/issues/5]', :text => /Subproject issue/
   end
@@ -94,7 +93,6 @@ class IssuesControllerTest < ActionController::TestCase
     assert_response :success
     assert_template 'index'
     assert_not_nil assigns(:issues)
-
     assert_select 'a[href=/issues/1]', :text => /Can&#x27;t print recipes/
     assert_select 'a[href=/issues/5]', 0
   end
@@ -105,7 +103,6 @@ class IssuesControllerTest < ActionController::TestCase
     assert_response :success
     assert_template 'index'
     assert_not_nil assigns(:issues)
-
     assert_select 'a[href=/issues/1]', :text => /Can&#x27;t print recipes/
     assert_select 'a[href=/issues/5]', :text => /Subproject issue/
     assert_select 'a[href=/issues/6]', 0
@@ -118,7 +115,6 @@ class IssuesControllerTest < ActionController::TestCase
     assert_response :success
     assert_template 'index'
     assert_not_nil assigns(:issues)
-
     assert_select 'a[href=/issues/1]', :text => /Can&#x27;t print recipes/
     assert_select 'a[href=/issues/5]', :text => /Subproject issue/
     assert_select 'a[href=/issues/6]', :text => /Issue of a private subproject/
@@ -1245,6 +1241,7 @@ class IssuesControllerTest < ActionController::TestCase
       assert_select 'a[href=/issues/2]', :text => /Previous/
       assert_select 'a[href=/issues/1]', :text => /Next/
     end
+
   end
 
   def test_show_should_display_link_to_the_assignee
@@ -1262,6 +1259,7 @@ class IssuesControllerTest < ActionController::TestCase
     issue.save!
     # changesets from other projects should be displayed even if repository
     # is disabled on issue's project
+
     project.disable_module! :repository
 
     @request.session[:user_id] = 2
@@ -1423,6 +1421,7 @@ class IssuesControllerTest < ActionController::TestCase
     get :show, :id => 999
     assert_response 404
   end
+
 
   def test_get_new
     @request.session[:user_id] = 2
@@ -2892,6 +2891,7 @@ class IssuesControllerTest < ActionController::TestCase
     assert_equal false, j.private_notes
     assert_equal 1, j.details.count
   end
+
 
   def test_put_update_with_note_and_spent_time
     @request.session[:user_id] = 2

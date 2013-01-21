@@ -7,6 +7,7 @@ class AddQueriesPermissions < ActiveRecord::Migration
   end
 
   def self.down
+
     Permission.where("controller=? and action=?", 'projects', 'add_query').first.destroy
   end
 end

@@ -169,6 +169,7 @@ class MyController < ApplicationController
     %w(top left right).each {|f| (layout[f] ||= []).delete block }
     @user.pref[:my_page_layout] = layout
     @user.pref.save
+
     redirect_to my_page_layout_path
   end
 

@@ -55,6 +55,7 @@ class IssueCategoriesController < ApplicationController
       respond_to do |format|
         format.html do
           flash[:notice] = l(:notice_successful_create)
+
           redirect_to_settings_in_projects
         end
         format.js

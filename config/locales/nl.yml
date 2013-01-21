@@ -291,6 +291,7 @@ nl:
   general_text_Yes: 'Ja'
   general_text_no: 'nee'
   general_text_yes: 'ja'
+
   label_activity: Activiteit
   label_add_another_file: Ander bestand toevoegen
   label_add_note: Voeg een notitie toe
@@ -383,6 +384,7 @@ nl:
   label_document_added: Document toegevoegd
   label_document_new: Nieuw document
   label_document_plural: Documenten
+
   label_downloads_abbr: D/L
   label_duplicated_by: gedupliceerd door
   label_duplicates: dupliceert
@@ -461,6 +463,7 @@ nl:
   label_message_plural: Berichten
   label_message_posted: Bericht toegevoegd
   label_min_max_length: Min-max lengte
+
   label_modified: gewijzigd
   label_module_plural: Modules
   label_month: Maand
@@ -819,9 +822,6 @@ nl:
   label_group: Groep
   label_group_new: Nieuwe groep
   label_time_entry_plural: Bestede tijd
-  text_journal_added: "%{label} %{value} toegevoegd"
-  field_active: Actief
-  enumeration_system_activity: Systeem Activiteit
   permission_delete_issue_watchers: Verwijder volgers
   version_status_closed: gesloten
   version_status_locked: vergrendeld
@@ -897,6 +897,7 @@ nl:
   project_module_gantt: Gantt
   project_module_calendar: Kalender
   button_edit_associated_wikipage: "Bewerk bijbehorende wiki pagina: %{page_title}"
+
   field_text: Tekst veld
   label_user_mail_option_only_owner: Alleen voor dingen waarvan ik de auteur ben
   setting_default_notification_option: Standaard instelling voor mededelingen
@@ -983,6 +984,7 @@ nl:
   description_all_columns: Alle kolommen
   button_export: Exporteren
   label_export_options: "%{export_format} export opties"
+
   error_attachment_too_big: Dit bestand kan niet worden geupload omdat het de maximaal toegestane grootte overschrijd (%{max_size})
   notice_failed_to_save_time_entries: "Opslaan gefaald voor %{count} tijdsnotatie(s) van %{total} geselecteerde: %{ids}."
   label_x_issues:

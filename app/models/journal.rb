@@ -29,6 +29,7 @@ class Journal < ActiveRecord::Base
                 :description => :notes,
                 :author => :user,
                 :group => :issue,
+
                 :type => Proc.new {|o| (s = o.new_status) ? (s.is_closed? ? 'issue-closed' : 'issue-edit') : 'issue-note' },
                 :url => Proc.new {|o| {:controller => 'issues', :action => 'show', :id => o.issue.id, :anchor => "change-#{o.id}"}}
 
@@ -82,6 +83,7 @@ class Journal < ActiveRecord::Base
     s << ' has-notes' unless notes.blank?
     s << ' has-details' unless details.blank?
     s << ' private-notes' if private_notes?
+
     s
   end
 
@@ -129,4 +131,5 @@ class Journal < ActiveRecord::Base
     end
     true
   end
+
 end

@@ -37,6 +37,7 @@ class Repository::Bazaar < Repository
     'Bazaar'
   end
 
+
   def entry(path=nil, identifier=nil)
     scm.bzr_path_encodig = log_encoding
     scm.entry(path, identifier)

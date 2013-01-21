@@ -191,6 +191,7 @@ module SortHelper
     @sort_criteria
   end
 
+
   # Returns a link which sorts by the named column.
   #
   # - column is the name of an attribute in the sorted record collection.

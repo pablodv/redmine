@@ -27,7 +27,9 @@ class QueryColumn
       self.groupable = name.to_s
     end
     self.default_order = options[:default_order]
+
     @inline = options.key?(:inline) ? options[:inline] : true
+
     @caption_key = options[:caption] || "field_#{name}"
   end
 
@@ -64,6 +66,7 @@ class QueryCustomFieldColumn < QueryColumn
     self.sortable = custom_field.order_statement || false
     self.groupable = custom_field.group_statement || false
     @inline = true
+
     @cf = custom_field
   end
 
@@ -106,6 +109,7 @@ class QueryAssociationCustomFieldColumn < QueryCustomFieldColumn
     @css_classes ||= "#{@association}_cf_#{@cf.id} #{@cf.field_format}"
   end
 end
+
 
 class Query < ActiveRecord::Base
   class StatementInvalid < ::ActiveRecord::StatementInvalid
@@ -678,6 +682,7 @@ class Query < ActiveRecord::Base
       # = this year
       date = Date.today
       sql = date_clause(db_table, db_field, date.beginning_of_year, date.end_of_year)
+
     when "~"
       sql = "LOWER(#{db_table}.#{db_field}) LIKE '%#{connection.quote_string(value.first.to_s.downcase)}%'"
     when "!~"

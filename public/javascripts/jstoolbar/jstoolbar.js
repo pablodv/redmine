@@ -44,6 +44,7 @@ function jsToolBar(textarea) {
 	this.toolbar.className = 'jstElements';
 	this.editor.parentNode.insertBefore(this.toolbar,this.editor);
 	
+
 	// Dragable resizing
 	if (this.editor.addEventListener && navigator.appVersion.match(/\bMSIE\b/))
 	{
@@ -206,6 +207,7 @@ jsToolBar.prototype = {
 			this.toolbar.removeChild(this.toolbar.firstChild)
 		}
 		this.toolNodes = {}; // vide les raccourcis DOM/**/
+
 
 		// Draw toolbar elements
 		var b, tool, newTool;

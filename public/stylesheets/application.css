@@ -107,7 +107,9 @@ a img{ border: 0; }
 
 a.issue.closed, a.issue.closed:link, a.issue.closed:visited { color: #999; text-decoration: line-through; }
 a.project.closed, a.project.closed:link, a.project.closed:visited { color: #999; }
+
 a.user.locked, a.user.locked:link, a.user.locked:visited {color: #999;}
+
 
 #sidebar a.selected {line-height:1.7em; padding:1px 3px 2px 2px; margin-left:-2px; background-color:#9DB9D5; color:#fff; border-radius:2px;}
 #sidebar a.selected:hover {text-decoration:none;}
@@ -364,6 +366,7 @@ div#issue-changesets p { margin-top: 0; margin-bottom: 1em;}
 div.journal {overflow:auto;}
 div.journal.private-notes {border-left:2px solid #d22; padding-left:4px; margin-left:-6px;}
 
+
 div#activity dl, #search-results { margin-left: 2em; }
 div#activity dd, #search-results dd { margin-bottom: 1em; padding-left: 18px; font-size: 0.9em; }
 div#activity dt, #search-results dt { margin-bottom: 0px; padding-left: 20px; line-height: 18px; background-position: 0 50%; background-repeat: no-repeat; }
@@ -374,6 +377,7 @@ div#activity span.project:after, #search-results span.project:after { content: "
 div#activity dd span.description, #search-results dd span.description { display:block; color: #808080; }
 div#activity dt.grouped {margin-left:5em;}
 div#activity dd.grouped {margin-left:9em;}
+
 
 #search-results dd { margin-bottom: 1em; padding-left: 20px; margin-left:0px; }
 
@@ -536,7 +540,6 @@ a.remove-upload {background: url(../images/delete.png) no-repeat 1px 50%; width:
 a.remove-upload:hover {text-decoration:none !important;}
 
 div.fileover { background-color: lavender; }
-
 div.attachments { margin-top: 12px; }
 div.attachments p { margin:4px 0 2px 0; }
 div.attachments img { vertical-align: middle; }
@@ -1109,16 +1112,13 @@ h2 img { vertical-align:middle; }
 .syntaxhl .type { color:#339; font-weight:bold }
 .syntaxhl .value { color: #088; }
 .syntaxhl .variable  { color:#037 }
-
 .syntaxhl .insert { background: hsla(120,100%,50%,0.12) }
 .syntaxhl .delete { background: hsla(0,100%,50%,0.12) }
 .syntaxhl .change { color: #bbf; background: #007; }
 .syntaxhl .head { color: #f8f; background: #505 }
 .syntaxhl .head .filename { color: white; }
-
 .syntaxhl .delete .eyecatcher { background-color: hsla(0,100%,50%,0.2); border: 1px solid hsla(0,100%,45%,0.5); margin: -1px; border-bottom: none; border-top-left-radius: 5px; border-top-right-radius: 5px; }
 .syntaxhl .insert .eyecatcher { background-color: hsla(120,100%,50%,0.2); border: 1px solid hsla(120,100%,25%,0.5); margin: -1px; border-top: none; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; }
-
 .syntaxhl .insert .insert { color: #0c0; background:transparent; font-weight:bold }
 .syntaxhl .delete .delete { color: #c00; background:transparent; font-weight:bold }
 .syntaxhl .change .change { color: #88f }

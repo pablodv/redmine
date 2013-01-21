@@ -28,6 +28,7 @@ class DocumentsController < ApplicationController
   def index
     @sort_by = %w(category date title author).include?(params[:sort_by]) ? params[:sort_by] : 'category'
     documents = @project.documents.includes(:attachments, :category).all
+
     case @sort_by
     when 'date'
       @grouped = documents.group_by {|d| d.updated_on.to_date }
@@ -58,6 +59,7 @@ class DocumentsController < ApplicationController
     if @document.save
       render_attachment_warning_if_needed(@document)
       flash[:notice] = l(:notice_successful_create)
+
       redirect_to project_documents_path(@project)
     else
       render :action => 'new'
@@ -79,6 +81,7 @@ class DocumentsController < ApplicationController
 
   def destroy
     @document.destroy if request.delete?
+
     redirect_to project_documents_path(@project)
   end
 
@@ -89,6 +92,7 @@ class DocumentsController < ApplicationController
     if attachments.present? && attachments[:files].present? && Setting.notified_events.include?('document_added')
       Mailer.attachments_added(attachments[:files]).deliver
     end
+
     redirect_to document_path(@document)
   end
 end

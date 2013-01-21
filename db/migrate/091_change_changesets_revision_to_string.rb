@@ -1,5 +1,6 @@
 class ChangeChangesetsRevisionToString < ActiveRecord::Migration
   def self.up
+
     # Some backends (eg. SQLServer 2012) do not support changing the type
     # of an indexed column so the index needs to be dropped first
     # BUT this index is renamed with some backends (at least SQLite3) for

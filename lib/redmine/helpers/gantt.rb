@@ -29,6 +29,7 @@ module Redmine
         IssueRelation::TYPE_PRECEDES => { :landscape_margin => 20, :color => '#628FEA' }
       }.freeze
 
+
       # :nodoc:
       # Some utility methods for the PDF export
       class PDF
@@ -155,6 +156,7 @@ module Redmine
           @relations = {}
         end
       end
+
 
       # Return all the project nodes that will be displayed
       def projects
@@ -418,6 +420,7 @@ module Redmine
         imgl.new_image(subject_width + g_width + 1, height)
         gc = Magick::Draw.new
         gc.font = Redmine::Configuration['rmagick_font_path'] || ""
+
         # Subjects
         gc.stroke('transparent')
         subjects(:image => gc, :top => (headers_height + 20), :indent => 4, :format => :image)

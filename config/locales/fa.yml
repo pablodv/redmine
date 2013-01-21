@@ -208,7 +208,6 @@ fa:
   mail_subject_wiki_content_updated: "برگه ویکی «%{id}» بروز شد"
   mail_body_wiki_content_updated: "برگه ویکی «%{id}» به دست %{author} بروز شد."
 
-
   field_name: نام
   field_description: یادداشت
   field_summary: خلاصه
@@ -751,10 +750,6 @@ fa:
   label_plugins: افزونه‌ها
   label_ldap_authentication: شناساییLDAP
   label_downloads_abbr: دریافت
-  label_optional_description: یادداشت دلخواه
-  label_add_another_file: افزودن پرونده دیگر
-  label_preferences: پسندها
-  label_chronological_order: به ترتیب تاریخ
   label_reverse_chronological_order: برعکس ترتیب تاریخ
   label_planning: برنامه ریزی
   label_incoming_emails: ایمیل‌های آمده
@@ -960,7 +955,6 @@ fa:
   text_issues_destroy_descendants_confirmation: This will also delete %{count} subtask(s).
   field_commit_logs_encoding: کدگذاری پیام‌های انباره
   field_scm_path_encoding: Path encoding
-  text_scm_path_encoding_note: "Default: UTF-8"
   field_path_to_repository: Path to repository
   field_root_directory: Root directory
   field_cvs_module: Module
@@ -1081,3 +1075,4 @@ fa:
   text_turning_multiple_off: If you disable multiple values, duplicate values will be
     removed in order to preserve only one value per item.
   label_attribute_of_issue: Issue's %{name}
+

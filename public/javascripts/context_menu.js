@@ -25,6 +25,7 @@ function contextMenuClick(event) {
   }
   contextMenuHide();
   if (target.is('a') || target.is('img')) { return; }
+
   if (event.which == 1 || (navigator.appVersion.match(/\bMSIE\b/))) {
     var tr = target.parents('tr').first();
     if (tr.length && tr.hasClass('hascontextmenu')) {

@@ -1,4 +1,5 @@
 <h3><%=l(:label_watched_issues)%> (<%= Issue.visible.watched_by(user.id).count %>)</h3>
+
 <% watched_issues = issueswatched_items %>
 
 <%= render :partial => 'issues/list_simple', :locals => { :issues => watched_issues } %>

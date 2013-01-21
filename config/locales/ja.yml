@@ -238,7 +238,6 @@ ja:
   mail_subject_wiki_content_updated: "Wikiページ %{id} が更新されました"
   mail_body_wiki_content_updated: "%{author} によってWikiページ %{id} が更新されました。"
 
-
   field_name: 名称
   field_description: 説明
   field_summary: サマリー
@@ -448,7 +447,6 @@ ja:
   permission_manage_repository: リポジトリの管理
   permission_browse_repository: リポジトリの閲覧
   permission_view_changesets: 更新履歴の閲覧
-  permission_commit_access: コミット権限
   permission_manage_boards: フォーラムの管理
   permission_view_messages: メッセージの閲覧
   permission_add_messages: メッセージの追加
@@ -1109,3 +1107,4 @@ ja:
   text_turning_multiple_off: If you disable multiple values, duplicate values will be
     removed in order to preserve only one value per item.
   label_attribute_of_issue: Issue's %{name}
+

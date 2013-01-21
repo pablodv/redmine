@@ -28,6 +28,7 @@ class ApiTest::AuthenticationTest < ActionController::IntegrationTest
     Setting.rest_api_enabled = '0'
   end
 
+
   def test_api_request_should_not_use_user_session
     log_user('jsmith', 'jsmith')
 
@@ -70,4 +71,5 @@ class ApiTest::AuthenticationTest < ActionController::IntegrationTest
     assert_equal user, assigns(:user)
     assert_equal user, User.current
   end
+
 end

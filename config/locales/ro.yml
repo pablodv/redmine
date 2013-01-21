@@ -182,7 +182,6 @@ ro:
   mail_subject_reminder: "%{count} tichete trebuie rezolvate în următoarele %{days} zile"
   mail_body_reminder: "%{count} tichete atribuite dumneavoastră trebuie rezolvate în următoarele %{days} zile:"
 
-
   field_name: Nume
   field_description: Descriere
   field_summary: Rezumat

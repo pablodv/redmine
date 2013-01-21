@@ -171,6 +171,7 @@ module SVG
       protected
 
       def min_x_value=(value)
+
         @min_x_value = DateTime.parse( value ).to_time
       end
 

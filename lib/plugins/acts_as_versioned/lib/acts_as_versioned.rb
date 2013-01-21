@@ -216,11 +216,13 @@ module ActiveRecord #:nodoc:
             has_many :versions, version_association_options do
               # finds earliest version of this record
               def earliest
+
                 @earliest ||= order('version').first
               end
 
               # find latest version of this record
               def latest
+
                 @latest ||= order('version desc').first
               end
             end
@@ -248,6 +250,7 @@ module ActiveRecord #:nodoc:
             def self.reloadable? ; false ; end
             # find first version before the given version
             def self.before(version)
+
               order('version desc').
                 where("#{original_class.versioned_foreign_key} = ? and version < ?", version.send(original_class.versioned_foreign_key), version.version).
                 first
@@ -255,6 +258,7 @@ module ActiveRecord #:nodoc:
 
             # find first version after the given version.
             def self.after(version)
+
               order('version').
                 where("#{original_class.versioned_foreign_key} = ? and version > ?", version.send(original_class.versioned_foreign_key), version.version).
                 first
@@ -376,6 +380,7 @@ module ActiveRecord #:nodoc:
         # Clones a model.  Used when saving a new version or reverting a model's version.
         def clone_versioned_model(orig_model, new_model)
           self.versioned_attributes.each do |key|
+
             new_model.send("#{key}=", orig_model.send(key)) if orig_model.respond_to?(key)
           end
 
@@ -469,6 +474,7 @@ module ActiveRecord #:nodoc:
 
           # Finds versions of a specific model.  Takes an options hash like <tt>find</tt>
           def find_versions(id, options = {})
+
             versioned_class.all({
               :conditions => ["#{versioned_foreign_key} = ?", id],
               :order      => 'version' }.merge(options))

@@ -205,7 +205,6 @@ fi:
   mail_subject_account_activation_request: "%{value} tilin aktivointi pyyntö"
   mail_body_account_activation_request: "Uusi käyttäjä (%{value}) on rekisteröitynyt. Hänen tili odottaa hyväksyntääsi:"
 
-
   field_name: Nimi
   field_description: Kuvaus
   field_summary: Yhteenveto
@@ -1100,3 +1099,4 @@ fi:
   text_turning_multiple_off: If you disable multiple values, duplicate values will be
     removed in order to preserve only one value per item.
   label_attribute_of_issue: Issue's %{name}
+

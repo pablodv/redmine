@@ -129,6 +129,7 @@ class AuthSourcesControllerTest < ActionController::TestCase
     assert_no_difference 'AuthSourceLdap.count' do
       delete :destroy, :id => 1
       assert_redirected_to '/auth_sources'
+
     end
   end
 
@@ -165,4 +166,5 @@ class AuthSourcesControllerTest < ActionController::TestCase
     assert_equal 'foo1', json.first['value']
     assert_equal 'foo1 (John Smith)', json.first['label']
   end
+
 end

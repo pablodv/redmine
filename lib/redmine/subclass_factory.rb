@@ -38,6 +38,7 @@ module Redmine
       # Returns an instance of the given subclass name
       def new_subclass_instance(class_name, *args)
         klass = get_subclass(class_name)
+
         if klass
           klass.new(*args)
         end

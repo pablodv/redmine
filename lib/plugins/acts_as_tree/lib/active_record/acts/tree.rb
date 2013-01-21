@@ -46,6 +46,7 @@ module ActiveRecord
           belongs_to :parent, :class_name => name, :foreign_key => configuration[:foreign_key], :counter_cache => configuration[:counter_cache]
           has_many :children, :class_name => name, :foreign_key => configuration[:foreign_key], :order => configuration[:order], :dependent => configuration[:dependent]
 
+
           scope :roots, where("#{configuration[:foreign_key]} IS NULL").order(configuration[:order])
 
           send :include, ActiveRecord::Acts::Tree::InstanceMethods
@@ -65,6 +66,7 @@ module ActiveRecord
         # Returns list of descendants.
         #
         #   root.descendants # => [child1, subchild1, subchild2]
+
         def descendants(depth=nil)
           depth ||= 0
           result = children.dup
@@ -77,6 +79,7 @@ module ActiveRecord
         # Returns list of descendants and a reference to the current node.
         #
         #   root.self_and_descendants # => [root, child1, subchild1, subchild2]
+
         def self_and_descendants(depth=nil)
           [self] + descendants(depth)
         end

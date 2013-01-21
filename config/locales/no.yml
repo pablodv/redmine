@@ -174,7 +174,6 @@
   mail_subject_reminder: "%{count} sak(er) har frist de kommende %{days} dagene"
   mail_body_reminder: "%{count} sak(er) som er tildelt deg har frist de kommende %{days} dager:"
 
-
   field_name: Navn
   field_description: Beskrivelse
   field_summary: Oppsummering
@@ -1069,3 +1068,4 @@
   text_turning_multiple_off: If you disable multiple values, duplicate values will be
     removed in order to preserve only one value per item.
   label_attribute_of_issue: Issue's %{name}
+

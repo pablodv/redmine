@@ -123,6 +123,7 @@ class ActiveSupport::TestCase
     User.current = saved_user
   end
 
+
   def change_user_password(login, new_password)
     user = User.first(:conditions => {:login => login})
     user.password, user.password_confirmation = new_password, new_password
@@ -173,6 +174,7 @@ class ActiveSupport::TestCase
     assert_equal true, saved, message
   end
 
+
   def assert_error_tag(options={})
     assert_tag({:attributes => { :id => 'errorExplanation' }}.merge(options))
   end
@@ -189,6 +191,7 @@ class ActiveSupport::TestCase
     d = HTML::Document.new(CGI::unescapeHTML(String.new(text))).root
     assert_select(d, *args, &block)
   end
+
 
   def assert_mail_body_match(expected, mail)
     if expected.is_a?(String)
@@ -503,3 +506,4 @@ ActionView::TestCase::TestController.class_eval do
     Rails.application.routes
   end
 end
+

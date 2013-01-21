@@ -20,6 +20,7 @@ require 'issues_controller'
 
 class IssuesControllerTransactionTest < ActionController::TestCase
   tests IssuesController
+
   fixtures :projects,
            :users,
            :roles,
@@ -172,6 +173,7 @@ class IssuesControllerTransactionTest < ActionController::TestCase
     put :update, :id => 1, :issue => {:fixed_version_id => 4, :lock_version => 2}, :last_journal_id => ''
     assert_not_include journal, assigns(:conflict_journals)
   end
+
 
   def test_update_stale_issue_with_overwrite_conflict_resolution_should_update
     @request.session[:user_id] = 2

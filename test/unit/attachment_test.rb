@@ -52,10 +52,8 @@ class AttachmentTest < ActiveSupport::TestCase
     assert_equal 'text/plain', a.content_type
     assert_equal 0, a.downloads
     assert_equal '1478adae0d4eb06d35897518540e25d6', a.digest
-
     assert a.disk_directory
     assert_match %r{\A\d{4}/\d{2}\z}, a.disk_directory
-
     assert File.exist?(a.diskfile)
     assert_equal 59, File.size(a.diskfile)
   end
@@ -70,6 +68,7 @@ class AttachmentTest < ActiveSupport::TestCase
       assert_equal a.send(attribute), copy.send(attribute), "#{attribute} was different"
     end
   end
+
 
   def test_size_should_be_validated_for_new_file
     with_settings :attachment_max_size => 0 do
@@ -197,6 +196,7 @@ class AttachmentTest < ActiveSupport::TestCase
     assert_equal '2012/05', a.disk_directory
     assert a.readable?
   end
+
 
   context "Attachmnet.attach_files" do
     should "attach the file" do

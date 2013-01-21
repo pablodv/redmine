@@ -219,6 +219,7 @@ DIFF
     )
     assert_equal 1, diff.size
     assert_equal "test02.txt", diff[0].file_name
+
   end
 
   private

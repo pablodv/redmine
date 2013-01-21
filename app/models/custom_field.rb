@@ -61,6 +61,7 @@ class CustomField < ActiveRecord::Base
     super if new_record?
   end
 
+
   def set_searchable
     # make sure these fields are not searchable
     self.searchable = false if %w(int float date bool).include?(field_format)
@@ -352,4 +353,5 @@ class CustomField < ActiveRecord::Base
       end
     end
   end
+
 end

@@ -103,4 +103,5 @@ class IssuePriorityTest < ActiveSupport::TestCase
     IssuePriority.find_by_position_name('highest').destroy
     assert_equal %w(lowest default high2 highest), IssuePriority.active.all.sort.map(&:position_name)
   end
+
 end

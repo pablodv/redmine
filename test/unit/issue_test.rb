@@ -88,6 +88,7 @@ class IssueTest < ActiveSupport::TestCase
     end
   end
 
+
   def test_create_with_required_custom_field
     set_language_if_valid 'en'
     field = IssueCustomField.find_by_name('Database')
@@ -163,6 +164,7 @@ class IssueTest < ActiveSupport::TestCase
     assert_equal '#01ABC', issue.parent_issue_id
     assert_include 'Parent task is invalid', issue.errors.full_messages
   end
+
 
   def assert_visibility_match(user, issues)
     assert_equal issues.collect(&:id).sort, Issue.all.select {|issue| issue.visible?(user)}.collect(&:id).sort
@@ -318,6 +320,7 @@ class IssueTest < ActiveSupport::TestCase
   def test_fixed_version_scope_with_empty_array_should_return_no_result
     assert_equal 0, Issue.fixed_version([]).count
   end
+
 
   def test_errors_full_messages_should_include_custom_fields_errors
     field = IssueCustomField.find_by_name('Database')
@@ -1092,6 +1095,7 @@ class IssueTest < ActiveSupport::TestCase
     assert_nil issue.parent_id
   end
 
+
   def test_move_to_another_project_with_disabled_tracker
     issue = Issue.find(1)
     target = Project.find(2)
@@ -1223,6 +1227,7 @@ class IssueTest < ActiveSupport::TestCase
       assert_equal false, issue_in_child_project.valid_parent_project?(issue_in_other_child_project)
     end
   end
+
 
   def test_recipients_should_include_previous_assignee
     user = User.find(3)
@@ -1954,4 +1959,5 @@ class IssueTest < ActiveSupport::TestCase
     assert_equal 3, issue.reload.attachments.count
     assert_equal %w(upload foo bar), issue.attachments.map(&:filename)
   end
+
 end

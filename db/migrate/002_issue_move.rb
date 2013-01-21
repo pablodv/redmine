@@ -7,6 +7,7 @@ class IssueMove < ActiveRecord::Migration
   end
 
   def self.down
+
     Permission.where("controller=? and action=?", 'projects', 'move_issues').first.destroy
   end
 end

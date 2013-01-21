@@ -1,5 +1,6 @@
 <h3><%=l(:label_reported_issues)%> (<%= Issue.visible.count(:conditions => { :author_id => User.current.id }) %>)</h3>
 
+
 <% reported_issues = issuesreportedbyme_items %>
 <%= render :partial => 'issues/list_simple', :locals => { :issues => reported_issues } %>
 <% if reported_issues.length > 0 %>

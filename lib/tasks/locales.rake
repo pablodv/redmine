@@ -43,6 +43,7 @@ namespace :locales do
     files = Dir.glob(File.join(dir,'*.{yaml,yml}'))
     files.sort.each do |file|
       puts "parsing #{file}..."
+
       file_strings = YAML.load_file(file)
       unless file_strings.is_a?(Hash)
         puts "#{file}: content is not a Hash (#{file_strings.class.name})"

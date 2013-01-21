@@ -63,6 +63,7 @@ class CustomFieldTest < ActiveSupport::TestCase
     assert_equal 'list', field.field_format
   end
 
+
   def test_possible_values_should_accept_an_array
     field = CustomField.new
     field.possible_values = ["One value", ""]
@@ -227,6 +228,7 @@ class CustomFieldTest < ActiveSupport::TestCase
     assert_equal 2, item_with_multiple_values.custom_field_value(other).size
   end
 
+
   def test_value_class_should_return_the_class_used_for_fields_values
     assert_equal User, CustomField.new(:field_format => 'user').value_class
     assert_equal Version, CustomField.new(:field_format => 'version').value_class
@@ -241,4 +243,5 @@ class CustomFieldTest < ActiveSupport::TestCase
     field = CustomField.find(1)
     assert_equal 'PostgreSQL', field.value_from_keyword('postgresql', Issue.find(1))
   end
+
 end

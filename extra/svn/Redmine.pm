@@ -388,6 +388,7 @@ sub is_public_project {
     $sth->execute($project_id);
     my $ret = 0;
     if (my @row = $sth->fetchrow_array) {
+
       if ($row[0] eq "1" || $row[0] eq "t") {
         $ret = 1;
       }
@@ -467,6 +468,7 @@ sub is_member {
       }
 
       unless ($auth_source_id) {
+
           my $method = $r->method;
           my $salted_password = Digest::SHA::sha1_hex($salt.$pass_digest);
           if ($hashed_password eq $salted_password && (($access_mode eq "R" && $permissions =~ /:browse_repository/) || $permissions =~ /:commit_access/) ) {

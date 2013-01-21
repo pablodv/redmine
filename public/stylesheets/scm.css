@@ -52,6 +52,7 @@ table.filecontent th.line-num {
     -ms-user-select: none;
     -webkit-user-select: none;
     font-weight:normal;
+
 }
 table.filecontent th.line-num a {
     text-decoration: none;

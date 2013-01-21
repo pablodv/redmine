@@ -94,6 +94,7 @@ class RolesController < ApplicationController
         role.save
       end
       flash[:notice] = l(:notice_successful_update)
+
       redirect_to roles_path
     end
   end

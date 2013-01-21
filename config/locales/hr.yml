@@ -195,7 +195,6 @@ hr:
   mail_subject_wiki_content_updated: "'%{id}' wiki page has been updated"
   mail_body_wiki_content_updated: "The '%{id}' wiki page has been updated by %{author}."
 
-
   field_name: Ime
   field_description: Opis
   field_summary: Sažetak
@@ -1080,3 +1079,4 @@ hr:
   text_turning_multiple_off: If you disable multiple values, duplicate values will be
     removed in order to preserve only one value per item.
   label_attribute_of_issue: Issue's %{name}
+

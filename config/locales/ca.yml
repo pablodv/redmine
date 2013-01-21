@@ -209,7 +209,6 @@ ca:
   mail_subject_wiki_content_updated: "S'ha actualitzat la pàgina wiki «%{id}»"
   mail_body_wiki_content_updated: "En %{author} ha actualitzat la pàgina wiki «%{id}»."
 
-
   field_name: Nom
   field_description: Descripció
   field_summary: Resum
@@ -814,10 +813,6 @@ ca:
   button_change_password: Canvia la contrasenya
   button_copy: Copia
   button_copy_and_follow: "Copia i segueix"
-  button_annotate: Anota
-  button_update: Actualitza
-  button_configure: Configura
-  button_quote: Cita
   button_duplicate: Duplica
   button_show: Mostra
 
@@ -960,7 +955,6 @@ ca:
   text_issues_destroy_descendants_confirmation: This will also delete %{count} subtask(s).
   field_commit_logs_encoding: Codificació dels missatges publicats
   field_scm_path_encoding: Path encoding
-  text_scm_path_encoding_note: "Default: UTF-8"
   field_path_to_repository: Path to repository
   field_root_directory: Root directory
   field_cvs_module: Module
@@ -1081,3 +1075,4 @@ ca:
   text_turning_multiple_off: If you disable multiple values, duplicate values will be
     removed in order to preserve only one value per item.
   label_attribute_of_issue: Issue's %{name}
+

@@ -192,6 +192,7 @@ function buildFilterRow(field, operator, values) {
       if (values[0] == filterValue[1]) {option.attr('selected', true)};
       select.append(option);
     }
+
   case "integer":
   case "float":
     tr.find('td.values').append(
@@ -472,6 +473,7 @@ function observeSearchfield(fieldId, targetId, url) {
   $('#'+fieldId).each(function() {
     var $this = $(this);
     $this.addClass('autocomplete');
+
     $this.attr('data-value-was', $this.val());
     var check = function() {
       var val = $this.val();
@@ -586,5 +588,6 @@ function blockEventPropagation(event) {
 }
 
 $(document).ready(setupAjaxIndicator);
+
 $(document).ready(hideOnLoad);
 $(document).ready(addFormObserversForDoubleSubmit);

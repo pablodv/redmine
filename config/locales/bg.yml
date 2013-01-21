@@ -332,6 +332,7 @@ bg:
   field_board_parent: Родителски форум
   field_private_notes: Лични бележки
 
+
   setting_app_title: Заглавие
   setting_app_subtitle: Описание
   setting_welcome_text: Допълнителен текст
@@ -357,6 +358,7 @@ bg:
   setting_time_format: Формат на часа
   setting_cross_project_issue_relations: Релации на задачи между проекти
   setting_cross_project_subtasks: Подзадачи от други проекти
+
   setting_issue_list_default_columns: Показвани колони по подразбиране
   setting_repositories_encodings: Кодова таблица на прикачените файлове и хранилищата
   setting_emails_header: Emails header
@@ -400,6 +402,7 @@ bg:
   setting_thumbnails_size: Размер на миниатюрите (в пиксели)
   setting_non_working_week_days: Не работни дни
 
+
   permission_add_project: Създаване на проект
   permission_add_subprojects: Създаване на подпроекти
   permission_edit_project: Редактиране на проект
@@ -420,6 +423,7 @@ bg:
   permission_edit_own_issue_notes: Редактиране на собствени бележки
   permission_view_private_notes: Разглеждане на лични бележки
   permission_set_notes_private: Установяване на бележките лични
+
   permission_move_issues: Преместване на задачи
   permission_delete_issues: Изтриване на задачи
   permission_manage_public_queries: Управление на публичните заявки
@@ -619,6 +623,7 @@ bg:
   label_new_statuses_allowed: Позволени състояния
   label_all: всички
   label_any: която и да е
+
   label_none: никакви
   label_nobody: никой
   label_next: Следващ
@@ -655,6 +660,7 @@ bg:
   label_in_more_than: след повече от
   label_in_the_next_days: в следващите
   label_in_the_past_days: в предишните
+
   label_greater_or_equal: ">="
   label_less_or_equal: <=
   label_between: между
@@ -665,6 +671,7 @@ bg:
   label_this_week: тази седмица
   label_last_week: последната седмица
   label_last_n_weeks: последните %{count} седмици
+
   label_last_n_days: "последните %{count} дни"
   label_this_month: текущия месец
   label_last_month: последния месец
@@ -678,6 +685,7 @@ bg:
   label_any_issues_in_project: задачи от проект
   label_any_issues_not_in_project: задачи, които не са в проект
   label_no_issues_in_project: никакви задачи в проект
+
   label_day_plural: дни
   label_repository: Хранилище
   label_repository_new: Ново хранилище
@@ -753,6 +761,7 @@ bg:
   label_follows: изпълнява се след
   label_copied_to: копирана в
   label_copied_from: копирана от
+
   label_end_to_start: край към начало
   label_end_to_end: край към край
   label_start_to_start: начало към начало
@@ -932,6 +941,7 @@ bg:
   button_duplicate: Дублиране
   button_show: Показване
   button_hide: Скриване
+
   button_edit_section: Редактиране на тази секция
   button_export: Експорт
   button_delete_my_account: Премахване на моя профил
@@ -1077,3 +1087,4 @@ bg:
   text_turning_multiple_off: If you disable multiple values, duplicate values will be
     removed in order to preserve only one value per item.
   label_attribute_of_issue: Issue's %{name}
+

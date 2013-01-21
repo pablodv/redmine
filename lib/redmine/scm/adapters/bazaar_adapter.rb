@@ -68,6 +68,7 @@ module Redmine
           @path_encoding = encoding
         end
 
+
         # Get info about the repository
         def info
           cmd_args = %w|revno|

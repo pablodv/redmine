@@ -115,4 +115,5 @@ class PrincipalTest < ActiveSupport::TestCase
     assert_equal 1, results.count
     assert_equal user, results.first
   end
+
 end

@@ -33,6 +33,7 @@ class FilesController < ApplicationController
 
     @containers = [ Project.includes(:attachments).reorder(sort_clause).find(@project.id)]
     @containers += @project.versions.includes(:attachments).reorder(sort_clause).all.sort.reverse
+
     render :layout => !request.xhr?
   end
 

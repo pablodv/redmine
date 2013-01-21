@@ -103,6 +103,7 @@ module IssuesHelper
     link_to(l(:button_add), new_project_issue_path(issue.project, :issue => attrs))
   end
 
+
   class IssueFieldsRows
     include ActionView::Helpers::TagHelper
 
@@ -350,6 +351,7 @@ module IssuesHelper
     unless id.present?
       return nil
     end
+
     association = Issue.reflect_on_association(field.to_sym)
     if association
       record = association.class_name.constantize.find_by_id(id)

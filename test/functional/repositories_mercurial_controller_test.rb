@@ -385,6 +385,7 @@ class RepositoriesMercurialControllerTest < ActionController::TestCase
       assert_select 'th.filename', :text => 'sources/welcome_controller.rb'
     end
 
+
     def test_annotate
       get :annotate, :id => PRJ_ID,
           :path => repository_path_hash(['sources', 'watchers_controller.rb'])[:param]

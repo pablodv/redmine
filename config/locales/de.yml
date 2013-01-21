@@ -148,6 +148,7 @@ de:
 
   actionview_instancetag_blank_option: Bitte auswählen
 
+
   button_activate: Aktivieren
   button_add: Hinzufügen
   button_annotate: Annotieren
@@ -253,6 +254,7 @@ de:
   error_can_not_delete_tracker: Dieser Tracker enthält Tickets und kann nicht gelöscht werden.
   error_can_not_remove_role: Diese Rolle wird verwendet und kann nicht gelöscht werden.
   error_can_not_reopen_issue_on_closed_version: Das Ticket ist einer abgeschlossenen Version zugeordnet und kann daher nicht wieder geöffnet werden.
+
   error_can_t_load_default_data: "Die Standard-Konfiguration konnte nicht geladen werden: %{value}"
   error_issue_done_ratios_not_updated: Der Ticket-Fortschritt wurde nicht aktualisiert.
   error_issue_not_found_in_project: 'Das Ticket wurde nicht gefunden oder gehört nicht zu diesem Projekt.'
@@ -780,6 +782,7 @@ de:
   label_wiki_edit_plural: Wiki-Bearbeitungen
   label_wiki_page: Wiki-Seite
   label_wiki_page_plural: Wiki-Seiten
+
   label_workflow: Workflow
   label_x_closed_issues_abbr:
     zero:  0 geschlossen

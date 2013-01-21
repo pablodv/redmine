@@ -930,6 +930,7 @@ da:
   project_module_gantt: Gantt
   project_module_calendar: Kalender
   button_edit_associated_wikipage: "Redigér tilknyttet Wiki side: %{page_title}"
+
   field_text: Tekstfelt
   label_user_mail_option_only_owner: Kun for ting jeg er ejer af
   setting_default_notification_option: Standardpåmindelsesmulighed
@@ -1096,3 +1097,4 @@ da:
   text_turning_multiple_off: If you disable multiple values, duplicate values will be
     removed in order to preserve only one value per item.
   label_attribute_of_issue: Issue's %{name}
+

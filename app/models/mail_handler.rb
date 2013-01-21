@@ -125,6 +125,7 @@ class MailHandler < ActionMailer::Base
   def dispatch
     headers = [email.in_reply_to, email.references].flatten.compact
     subject = email.subject.to_s
+
     if headers.detect {|h| h.to_s =~ MESSAGE_ID_RE}
       klass, object_id = $1, $2.to_i
       method_name = "receive_#{klass}_reply"
@@ -201,6 +202,7 @@ class MailHandler < ActionMailer::Base
       # If the received email was a reply to a private note, make the added note private
       issue.private_notes = true
     end
+
     issue.safe_attributes = issue_attributes_from_keywords(issue)
     issue.safe_attributes = {'custom_field_values' => custom_field_values_from_keywords(issue)}
     journal.notes = cleaned_up_text_body

@@ -397,6 +397,7 @@ class User < Principal
     "user #{CSS_CLASS_BY_STATUS[status]}"
   end
 
+
   # Returns the current day according to user's time zone
   def today
     if time_zone.nil?

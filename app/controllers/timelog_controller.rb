@@ -32,6 +32,7 @@ class TimelogController < ApplicationController
 
   rescue_from Query::StatementInvalid, :with => :query_statement_invalid
 
+
   helper :sort
   include SortHelper
   helper :issues

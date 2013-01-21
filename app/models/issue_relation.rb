@@ -30,6 +30,7 @@ class IssueRelation < ActiveRecord::Base
     end
   end
 
+
   belongs_to :issue_from, :class_name => 'Issue', :foreign_key => 'issue_from_id'
   belongs_to :issue_to, :class_name => 'Issue', :foreign_key => 'issue_to_id'
 
@@ -104,9 +105,6 @@ class IssueRelation < ActiveRecord::Base
         errors.add :base, :circular_dependency if issue_from.all_dependent_issues.include? issue_to
       else
         errors.add :base, :circular_dependency if issue_to.all_dependent_issues.include? issue_from
-      end
-      if issue_from.is_descendant_of?(issue_to) || issue_from.is_ancestor_of?(issue_to)
-        errors.add :base, :cant_link_an_issue_with_a_descendant
       end
     end
   end

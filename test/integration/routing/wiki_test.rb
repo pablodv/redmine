@@ -182,5 +182,6 @@ class RoutingWikiTest < ActionController::IntegrationTest
         { :controller => 'wiki', :action => 'destroy', :project_id => '567',
           :id => 'my_page', :format => 'json' }
       )
+
   end
 end

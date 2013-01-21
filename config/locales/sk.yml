@@ -180,7 +180,6 @@ sk:
   mail_subject_account_activation_request: "Aktivácia %{value} účtu"
   mail_body_account_activation_request: "Bol zaregistrovaný nový uživateľ %{value}. Aktivácia jeho účtu závisí na vašom potvrdení."
 
-
   field_name: Názov
   field_description: Popis
   field_summary: Prehľad
@@ -1076,3 +1075,4 @@ sk:
   text_turning_multiple_off: If you disable multiple values, duplicate values will be
     removed in order to preserve only one value per item.
   label_attribute_of_issue: Issue's %{name}
+

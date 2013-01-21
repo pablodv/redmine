@@ -99,6 +99,7 @@ class RedmineMailHandler
     issue_attributes.each { |attr, value| data["issue[#{attr}]"] = value }
 
     debug "Posting to #{uri}..."
+
     begin
       response = Net::HTTPS.post_form(URI.parse(uri), data, headers, :no_check_certificate => no_check_certificate)
     rescue SystemCallError => e # connection refused, etc.

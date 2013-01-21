@@ -46,6 +46,7 @@ class JournalsControllerTest < ActionController::TestCase
     assert_not_include journal, assigns(:journals)
   end
 
+
   def test_diff
     get :diff, :id => 3, :detail_id => 4
     assert_response :success
@@ -98,6 +99,7 @@ class JournalsControllerTest < ActionController::TestCase
     assert_response 404
   end
 
+
   def test_edit_xhr
     @request.session[:user_id] = 1
     xhr :get, :edit, :id => 2
@@ -122,6 +124,7 @@ class JournalsControllerTest < ActionController::TestCase
     xhr :get, :edit, :id => journal.id
     assert_response 404
   end
+
 
   def test_update_xhr
     @request.session[:user_id] = 1

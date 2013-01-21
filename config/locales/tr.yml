@@ -204,7 +204,6 @@ tr:
   mail_subject_account_activation_request: "%{value} hesabı etkinleştirme isteği"
   mail_body_account_activation_request: "Yeni bir kullanıcı (%{value}) kaydedildi. Hesap onaylanmayı bekliyor:"
 
-
   field_name: İsim
   field_description: Yorum
   field_summary: Özet
@@ -1098,3 +1097,4 @@ tr:
   text_turning_multiple_off: If you disable multiple values, duplicate values will be
     removed in order to preserve only one value per item.
   label_attribute_of_issue: Issue's %{name}
+

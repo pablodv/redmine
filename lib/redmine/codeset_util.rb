@@ -1,3 +1,4 @@
+
 if RUBY_VERSION < '1.9'
   require 'iconv'
 end
@@ -102,6 +103,7 @@ module Redmine
       end
       encodings = Setting.repositories_encodings.split(',').collect(&:strip)
       encodings.each do |encoding|
+
         if str.respond_to?(:force_encoding)
           begin
             str.force_encoding(encoding)

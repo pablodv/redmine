@@ -1,5 +1,6 @@
 <div class="contextual">
 <%= link_to l(:label_tracker_new), new_tracker_path, :class => 'icon icon-add' %>
+
 <%= link_to l(:field_summary), fields_trackers_path, :class => 'icon icon-summary' %>
 </div>
 
@@ -16,6 +17,7 @@
 <% for tracker in @trackers %>
   <tr class="<%= cycle("odd", "even") %>">
   <td><%= link_to h(tracker.name), edit_tracker_path(tracker) %></td>
+
   <td align="center">
     <% unless tracker.workflow_rules.count > 0 %>
       <span class="icon icon-warning">

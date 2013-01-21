@@ -139,6 +139,7 @@ class Version < ActiveRecord::Base
     closed_percent
   end
 
+
   # Returns true if the version is overdue: due date reached and some open issues
   def overdue?
     effective_date && (effective_date < Date.today) && (open_issues_count > 0)

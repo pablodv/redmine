@@ -63,6 +63,7 @@ module ObjectHelpers
     issue = Issue.new(attributes)
     issue.project ||= Project.find(1)
     issue.tracker ||= issue.project.trackers.first
+
     issue.subject = 'Generated' if issue.subject.blank?
     issue.author ||= User.find(2)
     yield issue if block_given?
@@ -109,6 +110,7 @@ module ObjectHelpers
     entry
   end
 
+
   def AuthSource.generate!(attributes={})
     @generated_auth_source_name ||= 'Auth 0'
     @generated_auth_source_name.succ!
@@ -141,4 +143,5 @@ module ObjectHelpers
     attachment.save!
     attachment
   end
+
 end

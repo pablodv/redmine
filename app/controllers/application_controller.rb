@@ -297,6 +297,7 @@ class ApplicationController < ActionController::Base
     @issues = Issue.find_all_by_id(params[:id] || params[:ids])
     raise ActiveRecord::RecordNotFound if @issues.empty?
     raise Unauthorized unless @issues.all?(&:visible?)
+
     @projects = @issues.collect(&:project).compact.uniq
     @project = @projects.first if @projects.size == 1
   rescue ActiveRecord::RecordNotFound

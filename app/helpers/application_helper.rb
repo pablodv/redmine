@@ -26,6 +26,7 @@ module ApplicationHelper
   include GravatarHelper::PublicMethods
   include Redmine::Pagination::Helper
 
+
   extend Forwardable
   def_delegators :wiki_helper, :wikitoolbar_for, :heads_for_wiki_formatter
 
@@ -66,11 +67,13 @@ module ApplicationHelper
   #   link_to_issue(issue, :subject => false)     # => Defect #6
   #   link_to_issue(issue, :project => true)      # => Foo - Defect #6
   #   link_to_issue(issue, :subject => false, :tracker => false)     # => #6
+
   #
   def link_to_issue(issue, options={})
     title = nil
     subject = nil
     text = options[:tracker] == false ? "##{issue.id}" : "#{issue.tracker} ##{issue.id}"
+
     if options[:subject] == false
       title = truncate(issue.subject, :length => 60)
     else
@@ -347,6 +350,7 @@ module ApplicationHelper
     end
     options
   end
+
 
   # Truncates and returns the string as a single line
   def truncate_single_line(string, *args)

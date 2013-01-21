@@ -30,6 +30,7 @@ class Message < ActiveRecord::Base
   acts_as_event :title => Proc.new {|o| "#{o.board.name}: #{o.subject}"},
                 :description => :content,
                 :group => :parent,
+
                 :type => Proc.new {|o| o.parent_id.nil? ? 'message' : 'reply'},
                 :url => Proc.new {|o| {:controller => 'messages', :action => 'show', :board_id => o.board_id}.merge(o.parent_id.nil? ? {:id => o.id} :
                                                                                                                                        {:id => o.parent_id, :r => o.id, :anchor => "message-#{o.id}"})}

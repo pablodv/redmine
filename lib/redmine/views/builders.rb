@@ -18,6 +18,7 @@
 require 'redmine/views/builders/json'
 require 'redmine/views/builders/xml'
 
+
 module Redmine
   module Views
     module Builders

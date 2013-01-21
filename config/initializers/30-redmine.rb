@@ -1,4 +1,5 @@
 I18n.default_locale = 'en'
+
 I18n.backend = Redmine::I18n::Backend.new
 
 require 'redmine'

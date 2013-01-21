@@ -310,7 +310,6 @@ pl:
   general_text_Yes: 'Tak'
   general_text_no: 'nie'
   general_text_yes: 'tak'
-
   label_activity: Aktywność
   label_add_another_file: Dodaj kolejny plik
   label_add_note: Dodaj notatkę
@@ -1091,3 +1090,4 @@ pl:
   text_turning_multiple_off: If you disable multiple values, duplicate values will be
     removed in order to preserve only one value per item.
   label_attribute_of_issue: Issue's %{name}
+

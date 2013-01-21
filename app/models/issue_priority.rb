@@ -21,6 +21,7 @@ class IssuePriority < Enumeration
   after_destroy {|priority| priority.class.compute_position_names}
   after_save {|priority| priority.class.compute_position_names if priority.position_changed? && priority.position}
 
+
   OptionName = :enumeration_issue_priorities
 
   def option_name
@@ -65,4 +66,5 @@ class IssuePriority < Enumeration
       end
     end
   end
+
 end

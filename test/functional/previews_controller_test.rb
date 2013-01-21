@@ -79,4 +79,5 @@ class PreviewsControllerTest < ActionController::TestCase
     assert_tag :tag => 'fieldset', :attributes => { :class => 'preview' },
                                    :content => /News description/
   end
+
 end

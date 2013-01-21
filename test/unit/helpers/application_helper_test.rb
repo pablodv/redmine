@@ -23,6 +23,7 @@ class ApplicationHelperTest < ActionView::TestCase
   include ERB::Util
   include Rails.application.routes.url_helpers
 
+
   fixtures :projects, :roles, :enabled_modules, :users,
            :repositories, :changesets,
            :trackers, :issue_statuses, :issues, :versions, :documents,
@@ -99,6 +100,7 @@ class ApplicationHelperTest < ActionView::TestCase
   else
     puts 'Skipping test_auto_links_with_non_ascii_characters, unsupported ruby version'
   end
+
 
   def test_auto_mailto
     assert_equal '<p><a class="email" href="mailto:test@foo.bar">test@foo.bar</a></p>',
@@ -563,6 +565,7 @@ RAW
     assert_equal %(<p><a href="/attachments/download/#{a2.id}/test.txt" class="attachment">test.txt</a></p>),
       textilizable('attachment:test.txt', :attachments => [a1, a2])
   end
+
 
   def test_wiki_links
     to_test = {
@@ -1091,6 +1094,7 @@ RAW
       thumbnail_tag(a)
   end
 
+
   def test_link_to_project
     project = Project.find(1)
     assert_equal %(<a href="/projects/ecookbook">eCookbook</a>),
@@ -1113,6 +1117,7 @@ RAW
     project.status = Project::STATUS_ARCHIVED
     assert_equal 'eCookbook', link_to_project_settings(project)
   end
+
 
   def test_link_to_legacy_project_with_numerical_identifier_should_use_id
     # numeric identifier are no longer allowed

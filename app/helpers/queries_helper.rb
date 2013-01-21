@@ -80,6 +80,7 @@ module QueriesHelper
         link_to(h(value), :controller => 'issues', :action => 'show', :id => issue)
       elsif column.name == :description
         issue.description? ? content_tag('div', textilizable(issue, :description), :class => "wiki") : ''
+
       else
         h(value)
       end
@@ -94,6 +95,7 @@ module QueriesHelper
         sprintf "%.2f", value
       elsif column.name == :hours
         html_hours("%.2f" % value)
+
       else
         h(value.to_s)
       end

@@ -148,6 +148,7 @@ class AuthSourceLdapTest < ActiveSupport::TestCase
       results = AuthSource.search("exa")
       assert_equal [], results
     end
+
   else
     puts '(Test LDAP server not configured)'
   end

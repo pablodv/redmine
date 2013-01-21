@@ -237,7 +237,6 @@ vi:
   mail_subject_reminder: "%{count} vấn đề hết hạn trong các %{days} ngày tới"
   mail_body_reminder: "%{count} vấn đề gán cho bạn sẽ hết hạn trong %{days} ngày tới:"
 
-
   field_name: Tên
   field_description: Mô tả
   field_summary: Tóm tắt

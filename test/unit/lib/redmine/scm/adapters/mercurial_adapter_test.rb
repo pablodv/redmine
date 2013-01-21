@@ -15,6 +15,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
+
 require File.expand_path('../../../../../../test_helper', __FILE__)
 begin
   require 'mocha'
@@ -155,6 +156,7 @@ begin
             assert_equal 20, diff5.size
             buf =  diff5[9].gsub(/\r\n|\r|\n/, "")
             assert_equal "-    @watched.remove_watcher(user)", buf
+
           end
         end
       end

@@ -103,4 +103,5 @@ module SettingsHelper
 
     options.map {|label, value| [l(label), value.to_s]}
   end
+
 end
