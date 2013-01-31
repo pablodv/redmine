@@ -64,8 +64,12 @@
     rows.right l(:label_spent_time), (@issue.total_spent_hours > 0 ? (link_to l_hours(@issue.total_spent_hours), {:controller => 'timelog', :action => 'index', :project_id => @project, :issue_id => @issue}) : "-"), :class => 'spent-time'
   end
 
-   unless @issue.disabled_core_fields.include?('created_on')
+  unless @issue.disabled_core_fields.include?('created_on')
     rows.left l(:label_issue_added), distance_of_time_in_words_to_now(@issue.created_on)
+  end
+
+  unless @issue.disabled_core_fields.include?('start_date')
+    rows.right l(:label_issue_started), distance_of_time_in_words_to_now(@issue.start_date)
   end
 end %>
 
