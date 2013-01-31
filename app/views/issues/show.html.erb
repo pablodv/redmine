@@ -71,6 +71,10 @@
   unless @issue.disabled_core_fields.include?('start_date')
     rows.right l(:label_issue_started), distance_of_time_in_words_to_now(@issue.start_date)
   end
+
+  unless @issue.disabled_core_fields.include?('updated_on')
+    rows.left l(:label_issue_updated), distance_of_time_in_words_to_now(@issue.updated_on)
+  end
 end %>
 
 <%= render_custom_fields_rows(@issue) %>
