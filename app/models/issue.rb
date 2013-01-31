@@ -574,6 +574,16 @@ class Issue < ActiveRecord::Base
         end
       end
     end
+
+    unless self.new_record?
+      invalid = false
+
+      self.descendants.each{ |i| invalid = true unless i.closed? }
+
+      if self.closed? && invalid
+        self.errors.add :base, "Para poder cerrar una peticion primero debe cerrar sus peticiones hijas."
+      end
+    end
   end
 
   # Validates the issue against additional workflow requirements
