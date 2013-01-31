@@ -173,6 +173,8 @@ class Query < ActiveRecord::Base
       :include => :project
     }
   }
+  scope :is_not_report, where(:is_report => false)
+  scope :is_a_report, where(:is_report => true)
 
   def initialize(attributes=nil, *args)
     super attributes

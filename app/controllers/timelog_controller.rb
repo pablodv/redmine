@@ -101,7 +101,18 @@ class TimelogController < ApplicationController
 
   def report
     retrieve_date_range
-    @report = Redmine::Helpers::TimeReport.new(@project, @issue, params[:criteria], params[:columns], @from, @to)
+
+    @queries = Query.is_a_report
+
+    if params[:query_id].present?
+      @query = Query.find params[:query_id]
+      @report = Redmine::Helpers::TimeReport.new(@project, @issue, @query.report_criteria.split(" "), @query.report_columns, @from, @to)
+    else
+      @report = Redmine::Helpers::TimeReport.new(@project, @issue, params[:criteria], params[:columns], @from, @to)
+      @query  = Query.new
+      session[:report_columns]  = params[:columns]  if params[:columns].present?
+      session[:report_criteria] = params[:criteria] if params[:criteria].present?
+    end
 
     respond_to do |format|
       format.html { render :layout => !request.xhr? }
