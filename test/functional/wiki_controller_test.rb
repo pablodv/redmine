@@ -1,5 +1,5 @@
 # Redmine - project management software
-# Copyright (C) 2006-2012  Jean-Philippe Lang
+# Copyright (C) 2006-2013  Jean-Philippe Lang
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -16,10 +16,6 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 require File.expand_path('../../test_helper', __FILE__)
-require 'wiki_controller'
-
-# Re-raise errors caught by the controller.
-class WikiController; def rescue_action(e) raise e end; end
 
 class WikiControllerTest < ActionController::TestCase
   fixtures :projects, :users, :roles, :members, :member_roles,
@@ -27,9 +23,6 @@ class WikiControllerTest < ActionController::TestCase
            :wiki_content_versions, :attachments
 
   def setup
-    @controller = WikiController.new
-    @request    = ActionController::TestRequest.new
-    @response   = ActionController::TestResponse.new
     User.current = nil
   end
 
@@ -60,7 +53,7 @@ class WikiControllerTest < ActionController::TestCase
     assert_tag :tag => 'h1', :content => /Another page/
     # Included page with an inline image
     assert_tag :tag => 'p', :content => /This is an inline image/
-    assert_tag :tag => 'img', :attributes => { :src => '/attachments/download/3',
+    assert_tag :tag => 'img', :attributes => { :src => '/attachments/download/3/logo.gif',
                                                :alt => 'This is a logo' }
   end
 
@@ -73,6 +66,19 @@ class WikiControllerTest < ActionController::TestCase
     assert_select 'a[href=?]', '/projects/ecookbook/wiki/CookBook_documentation/2/diff', :text => /diff/
     assert_select 'a[href=?]', '/projects/ecookbook/wiki/CookBook_documentation/3', :text => /Next/
     assert_select 'a[href=?]', '/projects/ecookbook/wiki/CookBook_documentation', :text => /Current version/
+  end
+
+  def test_show_old_version_with_attachments
+    page = WikiPage.find(4)
+    assert page.attachments.any?
+    content = page.content
+    content.text = "update"
+    content.save!
+
+    get :show, :project_id => 'ecookbook', :id => page.title, :version => '1'
+    assert_kind_of WikiContent::Version, assigns(:content)
+    assert_response :success
+    assert_template 'show'
   end
 
   def test_show_old_version_without_permission_should_be_denied
@@ -579,7 +585,7 @@ class WikiControllerTest < ActionController::TestCase
     # Line 5
     assert_tag :tag => 'tr', :child => {
       :tag => 'th', :attributes => {:class => 'line-num'}, :content => '5', :sibling => {
-        :tag => 'td', :attributes => {:class => 'author'}, :content => /redMine Admin/, :sibling => {
+        :tag => 'td', :attributes => {:class => 'author'}, :content => /Redmine Admin/, :sibling => {
           :tag => 'td', :content => /Some updated \[\[documentation\]\] here/
         }
       }
