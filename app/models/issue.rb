@@ -589,6 +589,16 @@ class Issue < ActiveRecord::Base
         end
       end
     end
+
+    unless self.new_record?
+      invalid = false
+
+      self.descendants.each{ |i| invalid = true unless i.closed? }
+
+      if self.closed? && invalid
+        self.errors.add :base, "Para poder cerrar una peticion primero debe cerrar sus peticiones hijas."
+      end
+    end
   end
 
   # Validates the issue against additional workflow requirements
@@ -971,7 +981,7 @@ class Issue < ActiveRecord::Base
   # Saves an issue and a time_entry from the parameters
   def save_issue_with_child_records(params, existing_time_entry=nil)
     Issue.transaction do
-      if params[:time_entry] && (params[:time_entry][:hours].present? || params[:time_entry][:comments].present?) && User.current.allowed_to?(:log_time, project)
+      if params[:time_entry] && User.current.allowed_to?(:log_time, project)
         @time_entry = existing_time_entry || TimeEntry.new
         @time_entry.project = project
         @time_entry.issue = self

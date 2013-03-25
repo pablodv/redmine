@@ -93,10 +93,19 @@ class TimelogController < ApplicationController
   end
 
   def report
-    @query = TimeEntryQuery.build_from_params(params, :project => @project, :name => '_')
-    scope = time_entry_scope
+    retrieve_date_range
 
-    @report = Redmine::Helpers::TimeReport.new(@project, @issue, params[:criteria], params[:columns], scope)
+    @queries = Query.is_a_report
+
+    if params[:query_id].present?
+      @query = TimeEntryQuery.build_from_params(params, :project => @project, :name => '_')
+      @report = Redmine::Helpers::TimeReport.new(@project, @issue, @query.report_criteria.split(" "), @query.report_columns, @from, @to)
+    else
+      @report = Redmine::Helpers::TimeReport.new(@project, @issue, params[:criteria], params[:columns], @from, @to)
+      @query  = TimeEntryQuery.new
+      session[:report_columns]  = params[:columns]  if params[:columns].present?
+      session[:report_criteria] = params[:criteria] if params[:criteria].present?
+    end
 
     respond_to do |format|
       format.html { render :layout => !request.xhr? }

@@ -160,6 +160,8 @@ class Query < ActiveRecord::Base
     "=!p" => :label_any_issues_not_in_project,
     "!p"  => :label_no_issues_in_project
   }
+  scope :is_not_report, where(:is_report => false)
+  scope :is_a_report, where(:is_report => true)
 
   class_attribute :operators_by_filter_type
   self.operators_by_filter_type = {
